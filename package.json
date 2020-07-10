@@ -13,7 +13,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "graphql-tag": "^2.10.4",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
