@@ -1,3 +1,4 @@
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 export default {
   mode: 'universal',
@@ -23,8 +24,24 @@ export default {
     '@nuxtjs/tailwindcss'
   ],
   modules: [
+    '@nuxtjs/apollo',
     '@nuxtjs/pwa'
   ],
   build: {
+  },
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.BACKEND_URL,
+        cache () {
+          return new InMemoryCache()
+        }
+      }
+    },
+    defaultOptions: {
+      $query: {
+        fetchPolicy: 'cache-and-network'
+      }
+    }
   }
 }
