@@ -26,7 +26,8 @@ export default {
   ],
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-webfontloader'
   ],
   build: {
   },
@@ -47,5 +48,10 @@ export default {
   },
   tailwindcss: {
     exposeConfig: true
+  },
+  webfontloader: {
+    google: {
+      families: ['Source Serif Pro:400,600,700']
+    }
   }
 }
