@@ -21,7 +21,8 @@ export default {
   components: true,
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@teamnovu/nuxt-breaky'
   ],
   modules: [
     '@nuxtjs/apollo',
@@ -43,5 +44,8 @@ export default {
         fetchPolicy: 'cache-and-network'
       }
     }
+  },
+  tailwindcss: {
+    exposeConfig: true
   }
 }
