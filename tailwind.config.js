@@ -24,7 +24,72 @@ module.exports = {
           900: '#181817'
         }
       }
-    }
+    },
+    typography: theme => ({
+      default: {
+        css: {
+          color: theme('colors.gray.700'),
+          a: {
+            color: theme('colors.red.700'),
+            textDecoration: 'no-underline'
+          },
+          'a:hover': {
+            textDecoration: 'underline'
+          },
+          strong: {
+            color: theme('colors.gray.800')
+          },
+          'ol > li::before': {
+            color: theme('colors.gray.600')
+          },
+          'ul > li::before': {
+            backgroundColor: theme('colors.gray.400')
+          },
+          hr: {
+            borderColor: theme('colors.gray.300')
+          },
+          blockquote: {
+            color: theme('colors.gray.900'),
+            borderLeftColor: theme('colors.gray.300')
+          },
+          h1: {
+            color: theme('colors.gray.900')
+          },
+          h2: {
+            marginTop: '30px',
+            marginBottom: '12px',
+            color: theme('colors.gray.900')
+          },
+          h3: {
+            color: theme('colors.gray.900')
+          },
+          h4: {
+            color: theme('colors.gray.900')
+          },
+          'figure figcaption': {
+            color: theme('colors.gray.600')
+          },
+          code: {
+            color: theme('colors.gray.900')
+          },
+          pre: {
+            color: theme('colors.gray.200'),
+            backgroundColor: theme('colors.gray.800')
+          },
+          thead: {
+            color: theme('colors.gray.900'),
+            borderBottomColor: theme('colors.gray.400')
+          },
+          'tbody tr': {
+            borderBottomColor: theme('colors.gray.300')
+          },
+          p: {
+            marginTop: '16px',
+            marginBottom: '16px'
+          }
+        }
+      }
+    })
   },
   variants: {},
   plugins: [
