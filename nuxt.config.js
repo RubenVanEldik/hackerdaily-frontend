@@ -51,7 +51,7 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ['Source Serif Pro:400,600,700']
+      families: ['Source Serif Pro:400,600,700', 'Source Code Pro:400,600']
     }
   }
 }
