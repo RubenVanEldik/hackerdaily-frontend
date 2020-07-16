@@ -9,7 +9,7 @@
   </div>
   <div
     v-else
-    class="text-center text-gray-700 pt-12 italic"
+    class="text-center text-gray-700 pt-16 italic"
   >
     {{ loading ? 'Loading stories...' : 'There are no stories saved for this day.' }}
   </div>

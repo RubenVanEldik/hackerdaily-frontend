@@ -1,8 +1,11 @@
 <template>
-  <span class="text-gray-900 hover:underline">
+  <span>
     <span v-if="story.webpage && story.webpage.article">
       <story-title-icon />
-      <nuxt-link :to="`/${story.id}/article`">
+      <nuxt-link
+        :to="`/${story.id}/article`"
+        class="text-gray-900 hover:underline"
+      >
         {{ storyTitle }}
       </nuxt-link>
     </span>

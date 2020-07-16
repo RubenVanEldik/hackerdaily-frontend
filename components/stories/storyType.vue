@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="storyType"
-    class="bg-red-700 inline-block text-sm text-orange-100 rounded-sm px-1 mr-1"
+    class="bg-red-700 inline-block text-xs leading-normal text-orange-100 rounded-sm h-4 px-1 mr-1"
   >
     {{ storyType }}
   </div>
