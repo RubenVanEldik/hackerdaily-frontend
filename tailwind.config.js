@@ -7,7 +7,22 @@
 module.exports = {
   theme: {
     fontFamily: {
-      serif: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif']
+    },
+    extend: {
+      colors: {
+        gray: {
+          100: '#f6f6ef',
+          200: '#ddddd7',
+          300: '#c4c4bf',
+          400: '#acaca7',
+          500: '#93938f',
+          600: '#7b7b77',
+          700: '#494947',
+          800: '#31312f',
+          900: '#181817'
+        }
+      }
     }
   },
   variants: {},
