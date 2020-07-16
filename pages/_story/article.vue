@@ -5,7 +5,7 @@
   >
     <article class="prose">
       <article-header :article="article" />
-      <article-content :content="article.html" />
+      <article-content :content="articleContent" />
     </article>
   </div>
   <div
@@ -33,6 +33,9 @@ export default {
   computed: {
     article () {
       return this.story?.webpage?.article
+    },
+    articleContent () {
+      return this.article?.html.replace(/<blockquote><p>["“”](.*)["“”]<\/p><\/blockquote>/g, '<blockquote><p>$1</p></blockquote>')
     }
   }
 }
