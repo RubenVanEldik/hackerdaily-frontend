@@ -1,0 +1,14 @@
+query ($id: Int!){
+  story(id: $id) {
+    webpage {
+      article {
+        id
+        author
+        headline
+        published_at
+        html
+        main_image
+      }
+    }
+  }
+}
