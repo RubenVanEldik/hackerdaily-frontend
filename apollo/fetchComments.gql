@@ -1,0 +1,29 @@
+query ($id: Int!){
+  story(id: $id) {
+    id
+    title
+    text
+    url
+    score
+    user {
+      id
+    }
+    comments {
+      id
+      text
+      deleted
+      posted_at
+      parent_comment {
+        id
+      }
+      user {
+        id
+      }
+    }
+    webpage {
+      article {
+        id
+      }
+    }
+  }
+}
