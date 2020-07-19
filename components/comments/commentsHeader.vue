@@ -17,7 +17,7 @@
         v-if="story.url"
         :href="story.url"
       >
-        {{ story.url }}
+        {{ siteName }}
       </a>
     </div>
     <commentBody
@@ -28,11 +28,19 @@
 </template>
 
 <script>
+import Url from 'url-parse'
+
 export default {
   props: {
     story: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    siteName () {
+      const { host } = new Url(this.story.url)
+      return host.replace('www.', '') || undefined
     }
   }
 }

@@ -3,14 +3,22 @@
     <h1>
       {{ article.headline }}
     </h1>
-    <em>
-      <span v-if="datePublished">
-        {{ datePublished }}
-      </span>
-      <span v-if="article.author">
-        by {{ article.author }}
-      </span>
-    </em>
+    <div class="flex flex-col italic">
+      <div>
+        <span v-if="datePublished">
+          {{ datePublished }}
+        </span>
+        <span v-if="article.author">
+          by {{ article.author }}
+        </span>
+      </div>
+      <nuxt-link :to="`/${$route.params.story}/comments`">
+        {{ descendants }} Comments
+      </nuxt-link>
+      <a :href="article.canonical_url">
+        {{ siteName }}
+      </a>
+    </div>
     <img
       v-if="mainImageNotIncludedInArticle"
       :src="article.main_image"
@@ -20,6 +28,7 @@
 </template>
 
 <script>
+import Url from 'url-parse'
 import dayjs from 'dayjs'
 
 export default {
@@ -27,12 +36,20 @@ export default {
     article: {
       type: Object,
       required: true
+    },
+    descendants: {
+      type: Number,
+      required: true
     }
   },
   computed: {
     datePublished () {
       if (!this.article.published_at) return null
       return dayjs(this.article.published_at).format('dddd D MMMM YYYY')
+    },
+    siteName () {
+      const { host } = new Url(this.article.canonical_url)
+      return host.replace('www.', '') || undefined
     },
     mainImageNotIncludedInArticle () {
       const mainImage = this.article && this.article.main_image

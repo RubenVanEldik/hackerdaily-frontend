@@ -1,6 +1,7 @@
 query ($id: Int!){
   story(id: $id) {
     id
+    descendants
     webpage {
       article {
         id
@@ -9,6 +10,7 @@ query ($id: Int!){
         published_at
         html
         main_image
+        canonical_url
       }
     }
   }

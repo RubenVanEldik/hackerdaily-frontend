@@ -4,7 +4,10 @@
     class="flex justify-center"
   >
     <article class="prose">
-      <article-header :article="article" />
+      <article-header
+        :article="article"
+        :descendants="story.descendants"
+      />
       <article-content :content="articleContent" />
     </article>
   </div>
