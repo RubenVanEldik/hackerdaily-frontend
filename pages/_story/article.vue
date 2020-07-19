@@ -10,7 +10,7 @@
   </div>
   <div
     v-else-if="!$apollo.loading"
-    class="text-center pt-12 italic"
+    class="fallback-message"
   >
     We have not saved this Hacker News article.
   </div>
