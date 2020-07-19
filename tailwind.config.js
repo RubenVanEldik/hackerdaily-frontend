@@ -56,8 +56,6 @@ module.exports = {
             color: theme('colors.gray.900')
           },
           h2: {
-            marginTop: '30px',
-            marginBottom: '12px',
             color: theme('colors.gray.900')
           },
           h3: {
@@ -82,10 +80,6 @@ module.exports = {
           },
           'tbody tr': {
             borderBottomColor: theme('colors.gray.300')
-          },
-          p: {
-            marginTop: '16px',
-            marginBottom: '16px'
           }
         }
       }
