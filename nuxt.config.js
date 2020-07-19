@@ -3,6 +3,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 export default {
   mode: 'universal',
   target: 'server',
+  loading: false,
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -48,6 +49,16 @@ export default {
   },
   tailwindcss: {
     exposeConfig: true
+  },
+  pwa: {
+    meta: {
+      theme_color: '#c53030'
+    },
+    manifest: {
+      background_color: '#f6f6ef',
+      display: 'fullscreen',
+      theme_color: '#c53030'
+    }
   },
   webfontloader: {
     google: {
