@@ -4,7 +4,7 @@
       v-for="comment in topLevelComments"
       :key="comment.id"
     >
-      <div class="border-t border-gray-300 my-6" />
+      <div class="border-t border-gray-200 my-6" />
       <comment
         :comment="comment"
         :all-comments="story.comments"
