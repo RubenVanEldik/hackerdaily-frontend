@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-row align-center justify-between py-6 overflow-auto sm:overflow-visible">
+  <header class="w-full flex flex-row align-center justify-between py-6 overflow-auto sm:overflow-visible">
     <app-bar-icon />
     <app-bar-item
       v-for="day in weekDays"
@@ -8,7 +8,7 @@
       :link="`/${day.toLowerCase()}`"
       :is-active="day.toLowerCase() === currentPage"
     />
-  </div>
+  </header>
 </template>
 
 <script>
