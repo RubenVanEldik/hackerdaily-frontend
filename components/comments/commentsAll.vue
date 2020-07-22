@@ -7,7 +7,7 @@
       <div class="border-t border-gray-200 my-6" />
       <comment
         :comment="comment"
-        :all-comments="story.comments"
+        :all-comments="orderedComments"
       />
     </div>
   </div>
@@ -28,8 +28,24 @@ export default {
     }
   },
   computed: {
+    orderedComments () {
+      return this.story.comments
+        .map((comment) => {
+          const descendants = this.story.comments
+            .reduce((commentChain, comment) => {
+              const parentComment = comment.parent_comment?.id
+              return parentComment && commentChain.includes(parentComment)
+                ? [...commentChain, comment.id]
+                : commentChain
+            }, [comment.id])
+            .length - 1
+
+          return { ...comment, descendants }
+        })
+        .sort((a, b) => b.descendants - a.descendants)
+    },
     topLevelComments () {
-      return this.story && this.story.comments.filter(comment => comment.parent_comment === null)
+      return this.story && this.orderedComments.filter(comment => comment.parent_comment === null)
     }
   }
 }
