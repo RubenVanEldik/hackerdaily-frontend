@@ -25,7 +25,7 @@
         {{ siteName }}
       </a>
     </div>
-    <commentBody
+    <comment-body
       v-if="story.text"
       :text="story.text"
     />
