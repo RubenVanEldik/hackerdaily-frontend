@@ -15,15 +15,31 @@
 import dayjs from 'dayjs'
 
 export default {
+  data () {
+    return {
+      today: dayjs(),
+      interval: null
+    }
+  },
   computed: {
     weekDays () {
-      return Array(7).fill(null).map((_, index) => dayjs().subtract(index + 1, 'day').format('dddd'))
+      return Array(7).fill(null).map((_, index) => this.today.subtract(index + 1, 'day').format('dddd'))
     },
     currentPage () {
       return this.$route.path === '/'
         ? dayjs().subtract(1, 'day').format('dddd').toLowerCase()
         : this.$route.params.day
     }
+  },
+  mounted () {
+    this.interval = setInterval(() => {
+      if (!dayjs().isSame(this.today, 'day')) {
+        this.today = dayjs()
+      }
+    }, 2000)
+  },
+  beforeDestroy () {
+    clearInterval(this.interval)
   }
 }
 </script>
