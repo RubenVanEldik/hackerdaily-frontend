@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span class="text-lg sm:text-base">
     <span v-if="story.webpage && story.webpage.article">
       <story-title-icon />
       <nuxt-link
