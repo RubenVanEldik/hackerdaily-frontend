@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import query from '~/apollo/fetchArticle.gql'
+import query from '~/apollo/queries/fetchArticle.gql'
 
 export default {
   apollo: {

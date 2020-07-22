@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import query from '~/apollo/fetchComments.gql'
+import query from '~/apollo/queries/fetchComments.gql'
 
 export default {
   apollo: {
