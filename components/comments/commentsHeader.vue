@@ -1,7 +1,12 @@
 <template>
   <div class="prose">
+    <story-type-badge
+      :title="story.title"
+      class="mb-1"
+      large
+    />
     <h1>
-      {{ story.title }}
+      {{ storyTitle }}
     </h1>
     <div class="flex flex-col italic">
       <div>
@@ -41,6 +46,9 @@ export default {
     siteName () {
       const { host } = new Url(this.story.url)
       return host.replace('www.', '') || undefined
+    },
+    storyTitle () {
+      return this.story.title.replace(/^(Ask|Show) HN: /, '')
     }
   }
 }

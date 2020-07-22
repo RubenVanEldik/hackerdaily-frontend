@@ -1,7 +1,8 @@
 <template>
   <div
     v-if="storyType"
-    class="bg-red-700 inline-block text-xs leading-normal text-orange-100 rounded-sm h-4 px-1 mr-1"
+    class="bg-red-700 inline-block leading-normal text-orange-100 rounded-sm"
+    :class="{ 'text-xs h-4 mr-1 px-1': !large, 'px-2': large }"
   >
     {{ storyType }}
   </div>
@@ -13,6 +14,11 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    large: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   computed: {

@@ -3,7 +3,7 @@
     <story-position :position="position" />
     <div>
       <div class="leading-tight">
-        <story-type :title="story.title" />
+        <story-type-badge :title="story.title" />
         <story-title :story="story" />
         <story-site :url="story.url" />
       </div>
