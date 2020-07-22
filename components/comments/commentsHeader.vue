@@ -8,7 +8,7 @@
     <h1>
       {{ storyTitle }}
     </h1>
-    <div class="flex flex-col italic">
+    <div class="flex flex-col italic font-semibold">
       <div>
         {{ story.score }} points · by {{ story.user.id }}
       </div>
