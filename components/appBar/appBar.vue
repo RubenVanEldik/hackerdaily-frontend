@@ -27,7 +27,7 @@ export default {
     },
     currentPage () {
       return this.$route.path === '/'
-        ? dayjs().subtract(1, 'day').format('dddd').toLowerCase()
+        ? this.today.subtract(1, 'day').format('dddd').toLowerCase()
         : this.$route.params.day
     }
   },
