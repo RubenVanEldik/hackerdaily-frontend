@@ -1,7 +1,7 @@
 <template>
   <stories
     :stories="stories"
-    :loading="$apollo.loading"
+    :loading="$apollo.loading || onServerSide"
   />
 </template>
 
@@ -10,9 +10,17 @@ import dayjs from 'dayjs'
 import query from '~/apollo/storiesWithinTimeframeQuery.gql'
 
 export default {
+  computed: {
+    onServerSide () {
+      return !process.client
+    }
+  },
   apollo: {
     stories: {
       query,
+      skip () {
+        return this.onServerSide
+      },
       variables () {
         const yesterday = dayjs().subtract(1, 'day')
         return {

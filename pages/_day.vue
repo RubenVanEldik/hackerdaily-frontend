@@ -1,7 +1,7 @@
 <template>
   <stories
     :stories="stories"
-    :loading="$apollo.loading"
+    :loading="$apollo.loading || onServerSide"
   />
 </template>
 
@@ -14,9 +14,17 @@ export default {
     const today = dayjs().subtract(1, 'day').format('dddd')
     if (`/${today.toLowerCase()}` === route.path) redirect('/')
   },
+  computed: {
+    onServerSide () {
+      return !process.client
+    }
+  },
   apollo: {
     stories: {
       query,
+      skip () {
+        return this.onServerSide
+      },
       variables () {
         const pageDay = this.$route.params.day
 
