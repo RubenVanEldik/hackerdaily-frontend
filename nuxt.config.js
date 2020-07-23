@@ -1,4 +1,4 @@
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import cache from './apollo/getCache'
 
 export default {
   mode: 'universal',
@@ -18,6 +18,7 @@ export default {
   css: [
   ],
   plugins: [
+    { src: '~/plugins/persistCache', mode: 'client' }
   ],
   components: true,
   buildModules: [
@@ -37,7 +38,7 @@ export default {
       default: {
         httpEndpoint: process.env.BACKEND_URL,
         cache () {
-          return new InMemoryCache()
+          return cache
         }
       }
     },
