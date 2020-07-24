@@ -6,6 +6,7 @@ export default {
   loading: false,
   components: true,
   publicRuntimeConfig: {
+    NODE_ENV: process.env.NODE_ENV,
     BACKEND_URL: process.env.BACKEND_URL,
     SIMPLE_ANALYTICS_URL: process.env.SIMPLE_ANALYTICS_URL
   },
