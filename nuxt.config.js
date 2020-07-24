@@ -4,6 +4,13 @@ export default {
   mode: 'universal',
   target: 'server',
   loading: false,
+  components: true,
+  publicRuntimeConfig: {
+    BACKEND_URL: process.env.BACKEND_URL,
+    SIMPLE_ANALYTICS_URL: process.env.SIMPLE_ANALYTICS_URL
+  },
+  privateRuntimeConfig: {
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -15,13 +22,10 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  css: [
-  ],
   plugins: [
     { src: '~/plugins/persistCache', mode: 'client' },
     { src: '~/plugins/simpleAnalytics.js', mode: 'client' }
   ],
-  components: true,
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
