@@ -18,7 +18,8 @@ export default {
   css: [
   ],
   plugins: [
-    { src: '~/plugins/persistCache', mode: 'client' }
+    { src: '~/plugins/persistCache', mode: 'client' },
+    { src: '~/plugins/simpleAnalytics.js', mode: 'client' }
   ],
   components: true,
   buildModules: [
