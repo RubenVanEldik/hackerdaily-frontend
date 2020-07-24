@@ -37,7 +37,8 @@ export default {
         this.today = dayjs()
 
         if (this.$route.path === '/') {
-          this.$router.push(`/${this.today.format('dddd').toLowerCase()}`)
+          const dayBeforeYesterday = dayjs().subtract(2, 'day').format('dddd').toLowerCase()
+          this.$router.push(`/${dayBeforeYesterday}`)
         }
       }
     }, 2000)
