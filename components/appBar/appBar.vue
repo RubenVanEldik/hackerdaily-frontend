@@ -35,6 +35,10 @@ export default {
     this.interval = setInterval(() => {
       if (!dayjs().isSame(this.today, 'day')) {
         this.today = dayjs()
+
+        if (this.$route.path === '/') {
+          this.$router.push(`/${this.today.format('dddd').toLowerCase()}`)
+        }
       }
     }, 2000)
   },
