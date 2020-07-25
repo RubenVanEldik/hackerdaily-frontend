@@ -16,7 +16,7 @@
         v-if="story.webpage && story.webpage.article"
         :to="`/${$route.params.story}/article`"
       >
-        xx minute read
+        {{ Math.ceil(story.webpage.article.length / 220) }} minute read
       </nuxt-link>
       <a
         v-if="story.url"
