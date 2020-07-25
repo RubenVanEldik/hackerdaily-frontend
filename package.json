@@ -1,9 +1,9 @@
 {
   "name": "HackerDaily",
-  "description": "A less addictive and more informative Hacker News alternative",
+  "description": "A more informative and less addictive Hacker News",
   "author": "Ruben van Eldik",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
