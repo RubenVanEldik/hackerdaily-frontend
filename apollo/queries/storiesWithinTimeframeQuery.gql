@@ -8,6 +8,7 @@ query ($startDate: timestamptz!, $endDate: timestamptz!) {
     webpage {
       article {
         id
+        length
       }
     }
     user {

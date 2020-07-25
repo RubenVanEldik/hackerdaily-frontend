@@ -6,6 +6,9 @@
     <span>
       by {{ story.user.id }} ·
     </span>
+    <span v-if="story.webpage && story.webpage.article">
+      {{ Math.ceil(story.webpage.article.length / 220) }} minutes ·
+    </span>
     <nuxt-link
       :to="`/${story.id}/comments`"
       class="hover:underline"
