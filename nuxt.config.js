@@ -14,7 +14,8 @@ export default {
   },
   head: {
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: process.env.BACKEND_URL }
     ]
   },
   plugins: [
