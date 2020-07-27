@@ -8,9 +8,7 @@
         <span v-if="datePublished">
           {{ datePublished }},
         </span>
-        <span v-if="article.author">
-          by {{ article.author }}
-        </span>
+        <article-author :author="article.author" />
       </div>
       <nuxt-link :to="`/${$route.params.story}/comments`">
         {{ descendants }} {{ descendants === 1 ? 'Comment' : 'Comments' }}
