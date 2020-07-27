@@ -7,7 +7,7 @@
       by {{ story.user.id }} ·
     </span>
     <span v-if="story.webpage && story.webpage.article">
-      {{ Math.ceil(story.webpage.article.length / 220) }} minutes ·
+      {{ expectedReadingTime }} {{ expectedReadingTime === 1 ? 'minute' : 'minutes' }} ·
     </span>
     <nuxt-link
       :to="`/${story.id}/comments`"
@@ -24,6 +24,12 @@ export default {
     story: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    expectedReadingTime () {
+      const wordsPerMinute = 220
+      return Math.ceil(this.story.webpage.article.length / wordsPerMinute)
     }
   }
 }

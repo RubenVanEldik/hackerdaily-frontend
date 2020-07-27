@@ -6,14 +6,14 @@
     <div class="flex flex-col italic">
       <div>
         <span v-if="datePublished">
-          {{ datePublished }}
+          {{ datePublished }},
         </span>
         <span v-if="article.author">
           by {{ article.author }}
         </span>
       </div>
       <nuxt-link :to="`/${$route.params.story}/comments`">
-        {{ descendants }} Comments
+        {{ descendants }} {{ descendants === 1 ? 'Comment' : 'Comments' }}
       </nuxt-link>
       <a :href="article.canonical_url">
         {{ siteName }}
