@@ -4,5 +4,5 @@
 @import './fonts.css';
 
 .fallback-message {
-  @apply text-center pt-12 italic;
+  @apply text-center mt-16 italic;
 }
