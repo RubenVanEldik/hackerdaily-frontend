@@ -19,7 +19,7 @@ export default {
   },
   plugins: [
     { src: '~/plugins/persistCache', mode: 'client' },
-    { src: '~/plugins/simpleAnalytics.js', mode: 'client' }
+    { src: '~/plugins/simpleAnalytics', mode: 'client' }
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
@@ -28,8 +28,7 @@ export default {
   ],
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa',
-    'nuxt-webfontloader'
+    '@nuxtjs/pwa'
   ],
   build: {
   },
@@ -67,11 +66,6 @@ export default {
           handler: 'cacheFirst'
         }
       ]
-    }
-  },
-  webfontloader: {
-    google: {
-      families: ['Source Serif Pro:400,600,700', 'Source Code Pro:400,600']
     }
   }
 }
