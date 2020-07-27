@@ -3,7 +3,7 @@
     v-if="article"
     class="flex justify-center"
   >
-    <article class="prose">
+    <article class="prose break-words">
       <article-header
         :article="article"
         :descendants="story.descendants"
