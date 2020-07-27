@@ -10,12 +10,12 @@
         </span>
         <article-author :author="article.author" />
       </div>
-      <nuxt-link :to="`/${$route.params.story}/comments`">
-        {{ descendants }} {{ descendants === 1 ? 'Comment' : 'Comments' }}
-      </nuxt-link>
       <a :href="article.canonical_url">
         {{ siteName }}
       </a>
+      <nuxt-link :to="`/${$route.params.story}/comments`">
+        {{ descendants }} {{ descendants === 1 ? 'Comment' : 'Comments' }}
+      </nuxt-link>
     </div>
     <img
       v-if="mainImageNotIncludedInArticle"
