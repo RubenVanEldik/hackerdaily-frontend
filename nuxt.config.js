@@ -58,14 +58,6 @@ export default {
       background_color: '#f6f6ef',
       display: 'fullscreen',
       theme_color: '#c53030'
-    },
-    workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://fonts.gstatic.com/.*.woff2',
-          handler: 'cacheFirst'
-        }
-      ]
     }
   }
 }
