@@ -12,7 +12,7 @@
     </article>
   </div>
   <div
-    v-else-if="apollo.loading"
+    v-else-if="$apollo.loading"
     class="fallback-message"
   >
     Loading article...
