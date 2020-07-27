@@ -12,7 +12,13 @@
     </article>
   </div>
   <div
-    v-else-if="!$apollo.loading"
+    v-else-if="apollo.loading"
+    class="fallback-message"
+  >
+    Loading article...
+  </div>
+  <div
+    v-else
     class="fallback-message"
   >
     We have not saved this Hacker News article.
