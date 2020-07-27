@@ -13,7 +13,7 @@
     v-else
     class="fallback-message"
   >
-    This comments for this story are not saved.
+    The comments for this story are not saved.
   </div>
 </template>
 <script>
