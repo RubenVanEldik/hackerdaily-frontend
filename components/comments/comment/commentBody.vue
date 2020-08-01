@@ -1,6 +1,6 @@
 <template>
   <div
-    class="prose break-words"
+    class="prose break-words my-1"
     style="max-width: 100%"
     v-html="parsedText"
   />
