@@ -63,7 +63,8 @@ export default {
   },
   pwa: {
     meta: {
-      theme_color: '#c53030'
+      theme_color: '#c53030',
+      nativeUI: true
     },
     manifest: {
       background_color: '#f6f6ef',
