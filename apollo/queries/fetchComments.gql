@@ -23,7 +23,7 @@ query ($id: Int!) {
     webpage {
       article {
         id
-        length
+        expected_reading_time
       }
     }
   }

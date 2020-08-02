@@ -8,7 +8,7 @@ query ($startDate: timestamptz!, $endDate: timestamptz!) {
     webpage {
       article {
         id
-        length
+        expected_reading_time
       }
     }
     user {
