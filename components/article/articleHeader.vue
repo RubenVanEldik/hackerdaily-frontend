@@ -14,7 +14,7 @@
         {{ siteName }}
       </a>
       <nuxt-link :to="`/${$route.params.story}/comments`">
-        {{ descendants }} {{ descendants === 1 ? 'Comment' : 'Comments' }}
+        {{ descendants }} {{ descendants === 1 ? 'comment' : 'comments' }}
       </nuxt-link>
     </div>
     <img
