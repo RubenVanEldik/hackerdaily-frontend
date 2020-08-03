@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 min-h-screen flex justify-center font-serif">
+  <div class="min-h-screen flex justify-center">
     <div class="w-screen min-h-full flex flex-col sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 max-w-2xl">
       <app-bar class="px-3 sm:px-0" />
       <main class="flex-grow mb-6 px-3 sm:px-0">
@@ -13,3 +13,13 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  head: {
+    bodyAttrs: {
+      class: 'bg-gray-100 font-serif'
+    }
+  }
+}
+</script>
