@@ -1,10 +1,15 @@
 <template>
   <div class="bg-gray-100 min-h-screen flex justify-center font-serif">
-    <div class="w-screen sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 max-w-2xl">
+    <div class="w-screen min-h-full flex flex-col sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 max-w-2xl">
       <app-bar class="px-3 sm:px-0" />
-      <main class="pb-5 px-3 sm:px-0">
+      <main class="flex-grow mb-6 px-3 sm:px-0">
         <nuxt />
       </main>
+      <footer class="mb-4 text-sm text-center text-gray-600 italic">
+        <a href="mailto:contact@hackerdaily.io">
+          Made with ♥ in Europe
+        </a>
+      </footer>
     </div>
   </div>
 </template>
