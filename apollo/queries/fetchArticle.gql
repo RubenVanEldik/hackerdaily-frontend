@@ -10,6 +10,7 @@ query ($id: Int!){
         published_at
         html
         main_image
+        main_image_unique
         canonical_url
       }
     }

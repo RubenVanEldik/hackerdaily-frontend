@@ -1,24 +1,24 @@
 <template>
   <div>
-    <h1>
-      {{ article.headline }}
-    </h1>
+    <h1 v-text="article.headline" />
     <div class="flex flex-col italic">
       <div>
-        <span v-if="datePublished">
-          {{ datePublished }},
-        </span>
+        <span
+          v-if="datePublished"
+          v-text="datePublished"
+        />
         <article-author :author="article.author" />
       </div>
-      <a :href="article.canonical_url">
-        {{ siteName }}
-      </a>
+      <a
+        :href="article.canonical_url"
+        v-text="siteName"
+      />
       <nuxt-link :to="`/${$route.params.story}/comments`">
         {{ descendants }} {{ descendants === 1 ? 'comment' : 'comments' }}
       </nuxt-link>
     </div>
     <img
-      v-if="mainImageNotIncludedInArticle"
+      v-if="article.main_image_unique"
       :src="article.main_image"
     >
     </img>
@@ -48,10 +48,6 @@ export default {
     siteName () {
       const { host } = new Url(this.article.canonical_url)
       return host.replace('www.', '') || undefined
-    },
-    mainImageNotIncludedInArticle () {
-      const mainImage = this.article && this.article.main_image
-      return mainImage && !this.article.html.includes(mainImage)
     }
   }
 }
