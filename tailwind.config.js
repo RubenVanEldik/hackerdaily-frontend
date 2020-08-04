@@ -65,7 +65,9 @@ module.exports = {
             color: theme('colors.gray.900')
           },
           'figure figcaption': {
-            color: theme('colors.gray.600')
+            color: theme('colors.gray.600'),
+            fontStyle: 'italic',
+            textAlign: 'center'
           },
           code: {
             color: theme('colors.gray.900')
