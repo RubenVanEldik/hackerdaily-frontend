@@ -5,25 +5,23 @@
       class="mb-1"
       large
     />
-    <h1>
-      {{ storyTitle }}
-    </h1>
+    <h1 v-text="storyTitle" />
     <div class="flex flex-col italic">
+      <div v-text="`${story.score} points, posted by ${story.user.id }`" />
       <div>
-        {{ story.score }} points, posted by {{ story.user.id }}
+        <a
+          v-if="story.url"
+          :href="story.url"
+          v-text="siteName"
+        />
       </div>
-      <a
-        v-if="story.url"
-        :href="story.url"
-      >
-        {{ siteName }}
-      </a>
-      <nuxt-link
-        v-if="story.webpage && story.webpage.article"
-        :to="`/${$route.params.story}/article`"
-      >
-        {{ Math.ceil(story.webpage.article.length / 220) }} minute read
-      </nuxt-link>
+      <div>
+        <nuxt-link
+          v-if="story.webpage && story.webpage.article"
+          :to="`/${$route.params.story}/article`"
+          v-text="`${story.webpage.article.expected_reading_time} minute read`"
+        />
+      </div>
     </div>
     <comment-body
       v-if="story.text"
