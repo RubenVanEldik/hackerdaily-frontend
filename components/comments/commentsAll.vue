@@ -29,20 +29,7 @@ export default {
   },
   computed: {
     orderedComments () {
-      return this.story.comments
-        .map((comment) => {
-          const descendants = this.story.comments
-            .reduce((commentChain, comment) => {
-              const parentComment = comment.parent_comment_id
-              return parentComment && commentChain.includes(parentComment)
-                ? [...commentChain, comment.id]
-                : commentChain
-            }, [comment.id])
-            .length - 1
-
-          return { ...comment, descendants }
-        })
-        .sort((a, b) => b.descendants - a.descendants)
+      return this.story.comments.slice().sort((a, b) => b.score - a.score)
     },
     topLevelComments () {
       return this.story && this.orderedComments.filter(comment => comment.parent_comment_id === null)
