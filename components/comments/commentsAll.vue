@@ -1,13 +1,13 @@
 <template>
-  <div v-if="topLevelComments && topLevelComments.length">
+  <div v-if="story.comments && story.comments.length">
     <div
-      v-for="comment in topLevelComments"
+      v-for="comment in sortComments(story.comments)"
       :key="comment.id"
     >
       <div class="border-t border-gray-200 my-6" />
       <comment
         :comment="comment"
-        :all-comments="orderedComments"
+        :all-comments="sortComments(comment.comments)"
       />
     </div>
   </div>
@@ -27,12 +27,9 @@ export default {
       required: true
     }
   },
-  computed: {
-    orderedComments () {
-      return this.story.comments.slice().sort((a, b) => b.score - a.score)
-    },
-    topLevelComments () {
-      return this.story && this.orderedComments.filter(comment => comment.parent_comment_id === null)
+  methods: {
+    sortComments (comments) {
+      return comments.slice().sort((a, b) => b.score - a.score)
     }
   }
 }
