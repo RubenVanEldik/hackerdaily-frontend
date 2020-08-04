@@ -9,13 +9,18 @@
         />
         <article-author :author="article.author" />
       </div>
-      <a
-        :href="article.canonical_url"
-        v-text="siteName"
-      />
-      <nuxt-link :to="`/${$route.params.story}/comments`">
-        {{ descendants }} {{ descendants === 1 ? 'comment' : 'comments' }}
-      </nuxt-link>
+      <div>
+        <a
+          :href="article.canonical_url"
+          v-text="siteName"
+        />
+      </div>
+      <div>
+        <nuxt-link
+          :to="`/${$route.params.story}/comments`"
+          v-text="`${descendants} ${descendants === 1 ? 'comment' : 'comments'}`"
+        />
+      </div>
     </div>
     <img
       v-if="article.main_image_unique"
