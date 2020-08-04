@@ -33,7 +33,7 @@ export default {
         .map((comment) => {
           const descendants = this.story.comments
             .reduce((commentChain, comment) => {
-              const parentComment = comment.parent_comment?.id
+              const parentComment = comment.parent_comment_id
               return parentComment && commentChain.includes(parentComment)
                 ? [...commentChain, comment.id]
                 : commentChain
@@ -45,7 +45,7 @@ export default {
         .sort((a, b) => b.descendants - a.descendants)
     },
     topLevelComments () {
-      return this.story && this.orderedComments.filter(comment => comment.parent_comment === null)
+      return this.story && this.orderedComments.filter(comment => comment.parent_comment_id === null)
     }
   }
 }

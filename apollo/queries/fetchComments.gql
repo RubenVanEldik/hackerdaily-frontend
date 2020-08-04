@@ -13,9 +13,7 @@ query ($id: Int!) {
       text
       deleted
       posted_at
-      parent_comment {
-        id
-      }
+      parent_comment_id
       user {
         id
       }

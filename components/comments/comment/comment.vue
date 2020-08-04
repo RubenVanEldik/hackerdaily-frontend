@@ -40,7 +40,7 @@ export default {
   computed: {
     childComments () {
       return this.allComments
-        .filter(({ parent_comment: parent }) => parent && parent.id === this.comment.id)
+        .filter(({ parent_comment_id: parent }) => parent && parent === this.comment.id)
     }
   }
 }
