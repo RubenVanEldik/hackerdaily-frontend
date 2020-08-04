@@ -7,7 +7,7 @@
     />
     <h1 v-text="storyTitle" />
     <div class="flex flex-col italic">
-      <div v-text="`${story.score} points, posted by ${story.user.id }`" />
+      <div v-text="`${story.score} points, posted by ${story.user_id }`" />
       <div>
         <a
           v-if="story.url"

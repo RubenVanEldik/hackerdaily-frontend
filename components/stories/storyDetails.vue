@@ -4,7 +4,7 @@
       {{ story.score }} {{ story.score === 1 ? 'point' : 'points' }} ·
     </span>
     <span>
-      by {{ story.user.id }} ·
+      by {{ story.user_id }} ·
     </span>
     <span v-if="story.webpage && story.webpage.article">
       {{ expectedReadingTime }} ·

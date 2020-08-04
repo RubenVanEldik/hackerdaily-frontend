@@ -5,18 +5,14 @@ query ($id: Int!) {
     text
     url
     score
-    user {
-      id
-    }
+    user_id
     comments(where: {dead: {_eq: false}, deleted: {_eq: false}}) {
       id
       text
       deleted
       posted_at
       parent_comment_id
-      user {
-        id
-      }
+      user_id
     }
     webpage {
       article {

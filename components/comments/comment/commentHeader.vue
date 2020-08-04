@@ -6,7 +6,7 @@
     >
       {{ showComment ? '−' : '+' }}
     </span>
-    <span>{{ comment.user ? comment.user.id : '[deleted]' }}</span>
+    <span>{{ comment.user_id || '[deleted]' }}</span>
     <span> · </span>
     <span>{{ comment.posted_at | relativeDate }}</span>
   </div>

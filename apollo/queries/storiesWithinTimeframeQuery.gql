@@ -11,8 +11,6 @@ query ($startDate: timestamptz!, $endDate: timestamptz!) {
         expected_reading_time
       }
     }
-    user {
-      id
-    }
+    user_id
   }
 }
