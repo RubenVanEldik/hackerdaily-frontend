@@ -52,6 +52,12 @@ module.exports = {
             color: theme('colors.gray.900'),
             borderLeftColor: theme('colors.gray.300')
           },
+          'blockquote p:first-of-type::before': {
+            content: 'none'
+          },
+          'blockquote p:last-of-type::after': {
+            content: 'none'
+          },
           h1: {
             color: theme('colors.gray.900')
           },
