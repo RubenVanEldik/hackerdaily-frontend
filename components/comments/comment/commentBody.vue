@@ -16,15 +16,19 @@ export default {
   },
   computed: {
     parsedText () {
-      return this.text
-        .split('<p>')
-        .map((part) => {
+      const parts = this.text.split('<p>')
+      return parts
+        .map((part, index) => {
           // Check if the paragraph is a blockquote
           const greaterThanRegex = /^((?:&gt;)*)/
           const quotedTextRegex = /^&quot;(.*)&quot;$/
 
           if (part.startsWith('&gt;')) {
-            return `<blockquote>${part.replace(greaterThanRegex, '')}</blockquote>`
+            let str = ''
+            if (!parts[index - 1]?.startsWith('&gt;')) str += '<blockquote>'
+            str += part.replace(greaterThanRegex, '')
+            if (!parts[index + 1]?.startsWith('&gt;')) str += '</blockquote>'
+            return str
           } if (quotedTextRegex.test(part)) {
             return `<blockquote>${part.match(quotedTextRegex)[1]}</blockquote>`
           }
