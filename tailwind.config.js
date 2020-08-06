@@ -75,6 +75,9 @@ module.exports = {
             fontStyle: 'italic',
             textAlign: 'center'
           },
+          'figure a img': {
+            margin: 'auto'
+          },
           code: {
             color: theme('colors.gray.900')
           },
