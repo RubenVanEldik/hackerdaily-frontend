@@ -64,11 +64,11 @@ export default {
   pwa: {
     meta: {
       theme_color: '#c53030',
-      nativeUI: true
+      mobileAppIOS: true
     },
     manifest: {
       background_color: '#f6f6ef',
-      display: 'fullscreen',
+      display: 'standalone',
       theme_color: '#c53030'
     }
   }
