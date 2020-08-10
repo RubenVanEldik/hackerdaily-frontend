@@ -1,14 +1,11 @@
 <template>
-  <div v-if="story.comments && story.comments.length">
+  <div v-if="recursiveComments">
     <div
-      v-for="comment in sortComments(story.comments)"
+      v-for="comment in recursiveComments"
       :key="comment.id"
     >
       <div class="border-t border-gray-200 my-6" />
-      <comment
-        :comment="comment"
-        :all-comments="sortComments(comment.comments)"
-      />
+      <comment :comment="comment" />
     </div>
   </div>
   <div
@@ -27,9 +24,24 @@ export default {
       required: true
     }
   },
-  methods: {
-    sortComments (comments) {
-      return comments.slice().sort((a, b) => b.score - a.score)
+  computed: {
+    recursiveComments () {
+      if (!this.story?.comments) return null
+
+      // Sort all comments
+      const allComments = this.story.comments.slice().sort((a, b) => b.score - a.score)
+      // Find all non-top level comments
+      const nestedComments = allComments.filter(comment => comment.parent_comment_id)
+
+      // Get all descendants for a comment
+      const getDescendants = id => nestedComments
+        .filter(comment => comment.parent_comment_id === id)
+        .map(comment => ({ ...comment, comments: getDescendants(comment.id) }))
+
+      // Return the top level comments with all descendants
+      return allComments
+        .filter(comment => !comment.parent_comment_id)
+        .map(comment => ({ ...comment, comments: getDescendants(comment.id) }))
     }
   }
 }

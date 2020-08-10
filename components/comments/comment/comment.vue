@@ -10,10 +10,9 @@
     />
     <div v-if="showComment">
       <comment
-        v-for="childComment in childComments"
+        v-for="childComment in comment.comments"
         :key="childComment.id"
         :comment="childComment"
-        :all-comments="allComments"
         class="pl-5 sm:pl-6"
       />
     </div>
@@ -26,21 +25,11 @@ export default {
     comment: {
       type: Object,
       required: true
-    },
-    allComments: {
-      type: Array,
-      required: true
     }
   },
   data () {
     return {
       showComment: true
-    }
-  },
-  computed: {
-    childComments () {
-      return this.allComments
-        .filter(({ parent_comment_id: parent }) => parent && parent === this.comment.id)
     }
   }
 }
