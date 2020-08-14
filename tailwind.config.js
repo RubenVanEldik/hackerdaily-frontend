@@ -75,8 +75,14 @@ module.exports = {
             fontStyle: 'italic',
             textAlign: 'center'
           },
-          'figure a img': {
-            margin: 'auto'
+          img: {
+            'margin-left': 'auto',
+            'margin-right': 'auto'
+          },
+          iframe: {
+            width: '100%',
+            height: '293px', // 1920x1080 aspect ratio with the standard article width of 520px
+            'max-height': 'calc(56vw - 12px)' // 1920x1080 ratio excluding the 24px border
           },
           code: {
             color: theme('colors.gray.900')
