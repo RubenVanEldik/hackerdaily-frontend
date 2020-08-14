@@ -1,25 +1,29 @@
 <template>
-  <div class="my-5">
-    <div class="text-gray-700 font-semibold">
-      <span
-        class="inline-block w-4 text-center cursor-pointer"
-        @click="() => showComment = !showComment"
-        v-text="showComment ? '−' : '+'"
-      />
-      <span v-text="header" />
-    </div>
+  <div class="relative my-5">
     <div
-      v-if="showComment && comment.text"
-      class="prose break-words my-1"
+      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 hover:text-gray-600"
+      @click="toggleComment"
+      v-text="showComment ? '−' : '+'"
+    />
+    <div
+      :id="`comment-${comment.id}`"
+      class="absolute -mt-8 leading-8 ml-6 text-gray-700 font-semibold"
+      v-text="header"
+    />
+    <div
+      v-show="showComment"
+      class="relative prose bg-gray-100 break-words"
       style="max-width: 100%"
       v-html="parsedText"
     />
-    <div v-if="showComment">
+    <div
+      v-show="showComment"
+      class="ml-5 sm:ml-6"
+    >
       <comment
         v-for="childComment in comment.comments"
         :key="childComment.id"
         :comment="childComment"
-        class="pl-5 sm:pl-6"
       />
     </div>
   </div>
@@ -77,6 +81,17 @@ export default {
           return part
         })
         .join('<p>')
+    }
+  },
+  methods: {
+    toggleComment () {
+      this.showComment = !this.showComment
+
+      // Scroll to the top of the comment if the header of the comment is out of the viewport
+      const element = document.getElementById(`comment-${this.comment.id}`)
+      if (element.getBoundingClientRect().top < 0) {
+        element.scrollIntoView()
+      }
     }
   }
 }
