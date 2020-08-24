@@ -57,16 +57,17 @@ export default {
       return parts
         .map((part, index) => {
           // Check if the paragraph is a blockquote
-          const greaterThanRegex = /^((?:&gt;)*)/
-          const quotedTextRegex = /^&quot;(.*)&quot;$/
+          const greaterThanRegex = /^((?:&gt;|&#62;)+)/
+          const quotedTextRegex = /^&quot;(.+)&quot;$/
 
-          if (part.startsWith('&gt;')) {
+          if (greaterThanRegex.test(part)) {
             let str = ''
-            if (!parts[index - 1]?.startsWith('&gt;')) str += '<blockquote>'
+            if (!greaterThanRegex.test(parts[index - 1])) str = '<blockquote>'
             str += part.replace(greaterThanRegex, '')
-            if (!parts[index + 1]?.startsWith('&gt;')) str += '</blockquote>'
+            if (!greaterThanRegex.test(parts[index + 1])) str += '</blockquote>'
             return str
-          } if (quotedTextRegex.test(part)) {
+          }
+          if (quotedTextRegex.test(part)) {
             return `<blockquote>${part.match(quotedTextRegex)[1]}</blockquote>`
           }
           return part
