@@ -17,15 +17,26 @@
   </div>
 </template>
 <script>
-import query from '~/apollo/queries/fetchComments.gql'
+import commentsQuery from '~/apollo/queries/fetchComments.gql'
+import articleQuery from '~/apollo/queries/fetchArticle.gql'
 
 export default {
   apollo: {
     story: {
-      query,
+      query: commentsQuery,
       variables () {
         return {
           id: this.$route.params.story
+        }
+      },
+      result ({ loading }) {
+        // Pre-fetch the article when the comments have been loaded
+        if (!loading) {
+          this.$apollo.query({
+            query: articleQuery,
+            variables: { id: this.$route.params.story },
+            fetchPolicy: 'cache-first' // Only fetch when its not yet in the cache
+          })
         }
       }
     }
