@@ -58,7 +58,7 @@ export default {
         .map((part, index) => {
           // Check if the paragraph is a blockquote
           const greaterThanRegex = /^((?:&gt;|&#62;)+)/
-          const quotedTextRegex = /^&quot;(.+)&quot;$/
+          const quotedTextRegex = /^(?:&quot;|“|”)(.+)(?:&quot;|“|”)$/
 
           if (greaterThanRegex.test(part)) {
             let str = ''
