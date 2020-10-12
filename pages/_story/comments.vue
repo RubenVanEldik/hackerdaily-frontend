@@ -21,6 +21,9 @@ import commentsQuery from '~/apollo/queries/fetchComments.gql'
 import articleQuery from '~/apollo/queries/fetchArticle.gql'
 
 export default {
+  validate ({ params }) {
+    return /^\d+$/.test(params.story)
+  },
   apollo: {
     story: {
       query: commentsQuery,
