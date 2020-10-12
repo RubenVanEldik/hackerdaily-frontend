@@ -10,6 +10,10 @@ import dayjs from 'dayjs'
 import query from '~/apollo/queries/storiesWithinTimeframeQuery.gql'
 
 export default {
+  validate ({ params }) {
+    const weekDays = Array(7).fill(null).map((_, index) => dayjs().subtract(index + 1, 'day').format('dddd').toLowerCase())
+    return weekDays.includes(params.day)
+  },
   middleware: ({ route, redirect }) => {
     const today = dayjs().subtract(1, 'day').format('dddd')
     if (`/${today.toLowerCase()}` === route.path) redirect('/')
