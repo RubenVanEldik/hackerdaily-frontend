@@ -1,0 +1,5 @@
+mutation ($whyUseIt: String, $toBeImproved: String, $email: String) {
+  insert_feedback(objects: {why_use_it: $whyUseIt, to_be_improved: $toBeImproved, email: $email}) {
+    affected_rows
+  }
+}
