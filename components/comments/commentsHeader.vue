@@ -23,9 +23,9 @@
         />
       </div>
     </div>
-    <div
+    <p
       v-if="story.text"
-      class="pt-8 pb-4 break-words"
+      class="py-2 break-words"
       v-html="story.text"
     />
   </div>
