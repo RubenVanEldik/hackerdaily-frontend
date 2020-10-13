@@ -23,9 +23,10 @@
         />
       </div>
     </div>
-    <comment-body
+    <div
       v-if="story.text"
-      :text="story.text"
+      class="pt-8 pb-4 break-words"
+      v-html="story.text"
     />
   </div>
 </template>
