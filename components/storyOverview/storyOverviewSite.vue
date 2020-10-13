@@ -2,9 +2,8 @@
   <span
     v-if="url"
     class="text-gray-600 text-sm"
-  >
-    ({{ siteName }})
-  </span>
+    v-text="`(${siteName})`"
+  />
 </template>
 
 <script>

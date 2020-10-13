@@ -1,26 +1,23 @@
 <template>
   <span class="text-lg sm:text-base">
     <span v-if="story.webpage && story.webpage.article">
-      <story-title-icon />
+      <story-overview-title-icon />
       <nuxt-link
         :to="`/${story.id}/article`"
         class="text-gray-900 hover:underline"
-      >
-        {{ storyTitle }}
-      </nuxt-link>
+        v-text="storyTitle"
+      />
     </span>
     <a
       v-else-if="story.url"
       :href="story.url"
-    >
-      {{ storyTitle }}
-    </a>
+      v-text="storyTitle"
+    />
     <nuxt-link
       v-else
       :to="`/${story.id}/comments`"
-    >
-      {{ storyTitle }}
-    </nuxt-link>
+      v-text="storyTitle"
+    />
   </span>
 </template>
 

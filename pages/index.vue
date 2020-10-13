@@ -1,5 +1,5 @@
 <template>
-  <stories
+  <story-overview
     :stories="stories"
     :loading="$apollo.loading || onServerSide"
   />

@@ -1,16 +1,16 @@
 <template>
   <div class="flex items-start pb-3">
-    <story-position
+    <story-overview-position
       class="flex-none"
       :position="position"
     />
     <div class="flex-auto">
       <div class="leading-tight">
         <story-type-badge :title="story.title" />
-        <story-title :story="story" />
-        <story-site :url="story.url" />
+        <story-overview-title :story="story" />
+        <story-overview-site :url="story.url" />
       </div>
-      <story-details :story="story" />
+      <story-overview-details :story="story" />
     </div>
   </div>
 </template>

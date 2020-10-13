@@ -1,6 +1,6 @@
 <template>
   <div v-if="stories && stories.length">
-    <story-item
+    <story-overview-item
       v-for="(story, index) in stories"
       :key="story.id"
       :story="story"
