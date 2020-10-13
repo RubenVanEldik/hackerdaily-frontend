@@ -17,8 +17,8 @@
   </div>
 </template>
 <script>
-import commentsQuery from '~/apollo/queries/fetchComments.gql'
-import articleQuery from '~/apollo/queries/fetchArticle.gql'
+import commentsQuery from '~/apollo/fetchComments.gql'
+import articleQuery from '~/apollo/fetchArticle.gql'
 
 export default {
   validate ({ params }) {

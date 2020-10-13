@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import feedbackMutation from '~/apollo/queries/sendFeedback.gql'
+import feedbackMutation from '~/apollo/sendFeedback.gql'
 
 export default {
   data () {

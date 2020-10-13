@@ -7,7 +7,7 @@
 
 <script>
 import dayjs from 'dayjs'
-import query from '~/apollo/queries/storiesWithinTimeframeQuery.gql'
+import query from '~/apollo/storiesWithinTimeframeQuery.gql'
 
 export default {
   validate ({ params }) {
