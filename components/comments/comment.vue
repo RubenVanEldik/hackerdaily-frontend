@@ -8,8 +8,15 @@
     <div
       :id="`comment-${comment.id}`"
       class="absolute -mt-8 leading-8 ml-6 text-gray-700 font-semibold"
-      v-text="header"
-    />
+    >
+      <span v-text="`${comment.user_id || '[deleted]'} · `" />
+      <a
+        :href="`https://news.ycombinator.com/item?id=${comment.id}`"
+        target="_blank"
+        rel="noopener"
+        v-text="dayjs(comment.posted_at).fromNow()"
+      />
+    </div>
     <div
       v-show="showComment"
       class="relative prose bg-gray-100 break-words"
@@ -49,9 +56,6 @@ export default {
     }
   },
   computed: {
-    header () {
-      return `${this.comment.user_id || '[deleted]'} · ${dayjs(this.comment.posted_at).fromNow()}`
-    },
     parsedText () {
       const parts = this.comment.text.split('<p>')
       return parts
@@ -85,6 +89,7 @@ export default {
     }
   },
   methods: {
+    dayjs,
     toggleComment () {
       this.showComment = !this.showComment
 
