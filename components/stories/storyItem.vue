@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-start pb-2">
+  <div class="flex items-start pb-3">
     <story-position :position="position" />
     <div>
       <div class="leading-tight">
