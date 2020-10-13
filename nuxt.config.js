@@ -62,7 +62,7 @@ export default {
   },
   pwa: {
     meta: {
-      viewport: 'width=device-width, initial-scale=1, min-zoom=1',
+      viewport: 'width=device-width, initial-scale=1',
       theme_color: '#c53030',
       mobileAppIOS: true
     },
