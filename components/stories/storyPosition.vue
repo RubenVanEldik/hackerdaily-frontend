@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-700 pr-2 text-right">
+  <div class="text-gray-700 w-5 mr-2 text-right">
     {{ position }}.
   </div>
 </template>
