@@ -1,7 +1,7 @@
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   target: 'server',
   loading: false,
   components: true,
