@@ -1,5 +1,8 @@
 <template>
-  <div v-if="recursiveComments">
+  <fallback
+    :is-empty="!recursiveComments"
+    empty-message="This story does not (yet) have any comments."
+  >
     <div
       v-for="comment in recursiveComments"
       :key="comment.id"
@@ -7,13 +10,7 @@
       <div class="border-t border-gray-200 my-6" />
       <comment :comment="comment" />
     </div>
-  </div>
-  <div
-    v-else
-    class="fallback-message"
-  >
-    This story does not (yet) have any comments.
-  </div>
+  </fallback>
 </template>
 
 <script>
@@ -26,7 +23,7 @@ export default {
   },
   computed: {
     recursiveComments () {
-      if (!this.story?.comments) return null
+      if (!this.story?.comments?.length) return null
 
       // Sort all comments
       const allComments = this.story.comments.slice().sort((a, b) => b.score - a.score)

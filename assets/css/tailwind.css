@@ -2,7 +2,3 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './fonts.css';
-
-.fallback-message {
-  @apply text-center mt-16 italic;
-}

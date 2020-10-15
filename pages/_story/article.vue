@@ -1,28 +1,19 @@
 <template>
-  <div
-    v-if="article"
+  <fallback
     class="flex justify-center"
+    :is-loading="$apollo.loading"
+    :is-empty="!article"
+    loading-message="Loading article..."
+    empty-message="The article for this story is not saved."
   >
     <article class="prose break-words overflow-auto">
       <article-header
         :article="article"
-        :descendants="story.descendants"
+        :descendants="story && story.descendants"
       />
       <article-content :content="articleContent" />
     </article>
-  </div>
-  <div
-    v-else-if="$apollo.loading"
-    class="fallback-message"
-  >
-    Loading article...
-  </div>
-  <div
-    v-else
-    class="fallback-message"
-  >
-    We have not saved this Hacker News article.
-  </div>
+  </fallback>
 </template>
 
 <script>

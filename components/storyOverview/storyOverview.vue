@@ -1,5 +1,10 @@
 <template>
-  <div v-if="stories && stories.length">
+  <fallback
+    :is-loading="loading"
+    :is-empty="!stories || !stories.length"
+    loading-message="Loading stories..."
+    empty-message="There are no stories saved for this day."
+  >
     <story-overview-item
       v-for="(story, index) in stories"
       :key="story.id"
@@ -12,12 +17,7 @@
     >
       This is a beta, let me know what you think! 🙏
     </nuxt-link>
-  </div>
-  <div
-    v-else
-    class="text-center text-gray-700 pt-16 italic"
-    v-text="loading ? 'Loading stories...' : 'There are no stories saved for this day.'"
-  />
+  </fallback>
 </template>
 
 <script>

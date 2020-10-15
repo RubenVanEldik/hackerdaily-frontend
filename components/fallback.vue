@@ -1,19 +1,9 @@
 <template>
   <div>
     <div
-      v-if="isLoading"
-      class="text-center mt-16 italic"
-      v-text="loadingMessage"
-    />
-    <div
-      v-else-if="isEmpty && isOffline"
-      class="text-center mt-16 italic"
-      v-text="'There is no internet connection.'"
-    />
-    <div
-      v-else-if="isEmpty"
-      class="text-center mt-16 italic"
-      v-text="emptyMessage"
+      v-if="fallbackMessage"
+      class="text-center mt-16 italic text-gray-600"
+      v-text="fallbackMessage"
     />
     <slot v-else />
   </div>
@@ -45,7 +35,15 @@ export default {
   },
   data () {
     return {
-      isOffline: process.client && !navigator.onLine
+      isOffline: process.client && !navigator.onLine // Check if its run in a browser and if so check if there is an internet connection
+    }
+  },
+  computed: {
+    fallbackMessage () {
+      if (this.isLoading) return this.loadingMessage
+      else if (this.isEmpty && this.isOffline) return 'There is no internet connection.'
+      else if (this.isEmpty) return this.emptyMessage
+      return null
     }
   },
   mounted () {
@@ -58,8 +56,11 @@ export default {
   },
   methods: {
     toggleConnectivity ({ type }) {
-      if (type === 'online') this.isOnline = true
-      else if (type === 'offline') this.isOnline = false
+      if (type === 'online') {
+        this.isOffline = false
+      } else if (type === 'offline') {
+        this.isOffline = true
+      }
     }
   }
 }
