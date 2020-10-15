@@ -6,7 +6,7 @@
     loading-message="Loading article..."
     empty-message="The article for this story is not saved."
   >
-    <article class="prose break-words overflow-auto">
+    <article class="prose dark:prose-dark break-words overflow-auto">
       <article-header
         :article="article"
         :descendants="story && story.descendants"

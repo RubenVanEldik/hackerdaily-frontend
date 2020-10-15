@@ -1,5 +1,5 @@
 <template>
-  <div class="prose">
+  <div class="prose dark:prose-dark">
     <story-type-badge
       :title="story.title"
       class="mb-1"

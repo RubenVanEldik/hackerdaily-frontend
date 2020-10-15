@@ -1,13 +1,13 @@
 <template>
   <div class="relative my-5">
     <div
-      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 hover:text-gray-600"
+      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 dark:text-gray-100 hover:text-gray-400"
       @click="toggleComment"
       v-text="showComment ? '−' : '+'"
     />
     <div
       :id="`comment-${comment.id}`"
-      class="absolute -mt-8 leading-8 ml-6 text-gray-700 font-semibold"
+      class="absolute -mt-8 leading-8 ml-6 text-gray-700 dark:text-gray-100 font-semibold"
     >
       <span v-text="`${comment.user_id || '[deleted]'} · `" />
       <a
@@ -19,7 +19,7 @@
     </div>
     <div
       v-show="showComment"
-      class="relative prose bg-gray-100 break-words"
+      class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words"
       style="max-width: 100%"
       v-html="parsedText"
     />

@@ -25,6 +25,9 @@ module.exports = {
         }
       }
     },
+    screens: {
+      dark: { raw: '(prefers-color-scheme: dark)' }
+    },
     typography: theme => ({
       default: {
         css: {
@@ -97,6 +100,56 @@ module.exports = {
           },
           'tbody tr': {
             borderBottomColor: theme('colors.gray.300')
+          }
+        }
+      },
+      dark: {
+        css: {
+          color: theme('colors.gray.300'),
+          strong: {
+            color: theme('colors.gray.200')
+          },
+          'ol > li::before': {
+            color: theme('colors.gray.500')
+          },
+          'ul > li::before': {
+            backgroundColor: theme('colors.gray.600')
+          },
+          hr: {
+            borderColor: theme('colors.gray.700')
+          },
+          blockquote: {
+            color: theme('colors.gray.200'),
+            borderLeftColor: theme('colors.gray.700')
+          },
+          h1: {
+            color: theme('colors.gray.100')
+          },
+          h2: {
+            color: theme('colors.gray.100')
+          },
+          h3: {
+            color: theme('colors.gray.100')
+          },
+          h4: {
+            color: theme('colors.gray.100')
+          },
+          'figure figcaption': {
+            color: theme('colors.gray.400')
+          },
+          code: {
+            color: theme('colors.gray.100')
+          },
+          pre: {
+            color: theme('colors.gray.200'),
+            backgroundColor: theme('colors.gray.900')
+          },
+          thead: {
+            color: theme('colors.gray.100'),
+            borderBottomColor: theme('colors.gray.600')
+          },
+          'tbody tr': {
+            borderBottomColor: theme('colors.gray.700')
           }
         }
       }

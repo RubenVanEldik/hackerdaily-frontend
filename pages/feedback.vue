@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full px-2 sm:px-12">
-    <div class="text-gray-800">
+  <div class="w-full px-2 sm:px-12 text-gray-700 dark:text-gray-300">
+    <div>
       I built this site primarily for myself, but since I shared it as a comment on HN a few people started using it. I am now trying to understand why people use the site and what can be improved.
     </div>
     <br>

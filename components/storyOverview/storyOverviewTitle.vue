@@ -1,10 +1,10 @@
 <template>
-  <span class="text-lg sm:text-base">
+  <span class="text-lg sm:text-base text-gray-900 dark:text-gray-100">
     <span v-if="story.webpage && story.webpage.article">
       <story-overview-title-icon />
       <nuxt-link
         :to="`/${story.id}/article`"
-        class="text-gray-900 hover:underline"
+        class="hover:underline"
         v-text="storyTitle"
       />
     </span>

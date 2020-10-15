@@ -16,7 +16,7 @@
 export default {
   head: {
     bodyAttrs: {
-      class: 'bg-gray-100 font-serif'
+      class: 'bg-gray-100 dark:bg-gray-800 font-serif'
     }
   }
 }
