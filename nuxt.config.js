@@ -35,10 +35,14 @@ export default {
     '@teamnovu/nuxt-breaky'
   ],
   modules: [
+    '@nuxtjs/sentry',
     '@nuxtjs/apollo',
     '@nuxtjs/pwa'
   ],
   build: {
+  },
+  sentry: {
+    dsn: process.env.SENTRY_DSN
   },
   apollo: {
     clientConfigs: {
