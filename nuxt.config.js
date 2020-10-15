@@ -42,7 +42,8 @@ export default {
   build: {
   },
   sentry: {
-    dsn: process.env.SENTRY_DSN
+    dsn: process.env.SENTRY_DSN,
+    disabled: process.env.NODE_ENV !== 'production'
   },
   apollo: {
     clientConfigs: {
