@@ -22,7 +22,7 @@
     <input
       v-model="email"
       class="w-full mb-4 p-1 rounded-sm"
-      placeholder="Email (only necessary if you want a response)"
+      placeholder="Email (only necessary if you need a response)"
     >
     <button
       class="text-white text-sm py-1 px-2 rounded-sm"
