@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center pt-48 sm:pt-56 md:64">
+  <div class="text-center pt-48 sm:pt-56 md:64 text-gray-700 dark:text-gray-300">
     <div
       class="text-4xl"
       v-text="error.statusCode"
