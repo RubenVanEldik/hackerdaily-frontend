@@ -4,9 +4,8 @@
     :to="link"
     class="xl text-red-700 text-lg sm:text-base px-2 sm:px-3 md:px-4"
     :class="{ 'font-semibold': isActive, 'hover:underline': !isActive }"
-  >
-    {{ text }}
-  </component>
+    v-text="text"
+  />
 </template>
 
 <script>

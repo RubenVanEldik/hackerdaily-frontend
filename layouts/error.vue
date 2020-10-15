@@ -1,11 +1,13 @@
 <template>
   <div class="text-center pt-48 sm:pt-56 md:64">
-    <div class="text-4xl">
-      {{ error.statusCode }}
-    </div>
-    <div class="text-lg">
-      {{ error.message }}
-    </div>
+    <div
+      class="text-4xl"
+      v-text="error.statusCode"
+    />
+    <div
+      class="text-lg"
+      v-text="error.message"
+    />
   </div>
 </template>
 

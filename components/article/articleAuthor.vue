@@ -4,12 +4,12 @@
     <a
       v-if="author.startsWith('twitter:@')"
       :href="`https://twitter.com/${author.replace(/^twitter:@/, '')}`"
-    >
-      {{ author.replace(/^twitter:/, '') }}
-    </a>
-    <span v-else>
-      {{ author }}
-    </span>
+      v-text="author.replace(/^twitter:/, '')"
+    />
+    <span
+      v-else
+      v-text="author"
+    />
   </span>
 </template>
 
