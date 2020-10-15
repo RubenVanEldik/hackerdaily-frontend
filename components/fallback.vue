@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="fallbackMessage"
-      class="text-center mt-16 italic text-gray-600"
+      class="text-center mt-16 italic text-gray-600 dark:text-gray-400"
       v-text="fallbackMessage"
     />
     <slot v-else />
