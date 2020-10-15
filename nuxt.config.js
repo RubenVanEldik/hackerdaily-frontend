@@ -1,5 +1,3 @@
-import { InMemoryCache } from 'apollo-cache-inmemory'
-
 export default {
   ssr: false,
   target: 'server',
@@ -44,12 +42,7 @@ export default {
   },
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: process.env.BACKEND_URL,
-        cache () {
-          return new InMemoryCache()
-        }
-      }
+      default: '~/apollo.config.js'
     },
     defaultOptions: {
       $query: {
