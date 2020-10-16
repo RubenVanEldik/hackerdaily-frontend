@@ -17,6 +17,11 @@ export default {
   validate ({ params }) {
     return /^\d+$/.test(params.story)
   },
+  head () {
+    return {
+      title: this.story?.title
+    }
+  },
   apollo: {
     story: {
       query: commentsQuery,

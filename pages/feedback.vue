@@ -38,6 +38,9 @@
 import feedbackMutation from '~/apollo/sendFeedback.gql'
 
 export default {
+  head: {
+    title: 'Feedback'
+  },
   data () {
     return {
       whyUseIt: null,

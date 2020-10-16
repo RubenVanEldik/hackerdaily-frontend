@@ -24,6 +24,11 @@ export default {
   validate ({ params }) {
     return /^\d+$/.test(params.story)
   },
+  head () {
+    return {
+      title: this.story?.webpage?.article?.headline
+    }
+  },
   apollo: {
     story: {
       query: articleQuery,

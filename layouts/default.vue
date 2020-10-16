@@ -15,6 +15,9 @@
 <script>
 export default {
   head: {
+    titleTemplate (titleChunk) {
+      return (titleChunk && titleChunk !== 'HackerDaily') ? `${titleChunk} | HackerDaily` : 'HackerDaily'
+    },
     bodyAttrs: {
       class: 'bg-gray-100 dark:bg-gray-800 font-serif'
     }
