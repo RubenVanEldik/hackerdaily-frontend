@@ -20,7 +20,22 @@
 export default {
   data () {
     return {
+      mediaQueryList: null,
       darkModeEnabled: window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)')
+      this.mediaQueryList.addEventListener('change', this.setDarkMode)
+    })
+  },
+  beforeDestroy () {
+    this.mediaQueryList.removeEventListener('change', this.setDarkMode)
+  },
+  methods: {
+    setDarkMode ({ matches }) {
+      this.darkModeEnabled = matches
     }
   }
 }
