@@ -26,7 +26,7 @@
     >
     <button
       class="text-white text-sm py-1 px-2 rounded-sm"
-      :class="feedbackReceived ? 'bg-gray-600 cursor-auto' : 'bg-red-700'"
+      :class="feedbackReceived ? 'bg-gray-600 cursor-auto' : 'bg-red-700 dark:bg-red-600'"
       :disabled="feedbackReceived"
       @click="sendFeedback"
       v-text="feedbackReceived ? 'Thank you for your feedback!' : 'Send feedback'"
