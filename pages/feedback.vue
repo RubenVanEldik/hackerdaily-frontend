@@ -9,19 +9,19 @@
     </div>
     <textarea
       v-model="whyUseIt"
-      class="my-4 block w-full p-1 rounded-sm"
+      class="my-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
       rows="3"
       placeholder="Why do you use HackerDaily?"
     />
     <textarea
       v-model="toBeImproved"
-      class="mb-4 block w-full p-1 rounded-sm"
+      class="mb-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
       rows="3"
       placeholder="What can be improved?"
     />
     <input
       v-model="email"
-      class="w-full mb-4 p-1 rounded-sm"
+      class="w-full mb-4 p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
       placeholder="Email (only necessary if you need a response)"
     >
     <button
