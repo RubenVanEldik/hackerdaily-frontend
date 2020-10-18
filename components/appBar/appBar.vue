@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full flex flex-row align-center justify-between py-6 overflow-auto sm:overflow-visible">
+  <header class="w-full flex flex-row align-center justify-between py-6 overflow-auto sm:overflow-visible text-red-700 dark:text-red-600">
     <app-bar-icon />
     <app-bar-item
       v-for="day in weekDays"
