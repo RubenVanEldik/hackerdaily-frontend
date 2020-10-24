@@ -1,7 +1,10 @@
 <template>
   <div class="relative my-5">
-    <button
+    <div
       class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 dark:text-gray-100 hover:text-gray-400"
+      role="button"
+      tabindex="0"
+      aria-label="Minimize comment"
       @click="toggleComment"
       v-text="showComment ? '−' : '+'"
     />
