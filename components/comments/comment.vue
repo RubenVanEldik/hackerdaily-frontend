@@ -1,6 +1,6 @@
 <template>
   <div class="relative my-5">
-    <div
+    <button
       class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 dark:text-gray-100 hover:text-gray-400"
       @click="toggleComment"
       v-text="showComment ? '−' : '+'"
