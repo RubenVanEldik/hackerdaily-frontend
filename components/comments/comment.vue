@@ -79,15 +79,7 @@ export default {
           }
           return part
         })
-        .map((part) => {
-          // Make all references superscript
-          const referenceRegex = /(\[\d+\])/g
-
-          if (referenceRegex.test(part)) {
-            return part.replace(referenceRegex, '<sup>$1</sup>')
-          }
-          return part
-        })
+        .map(part => !/^\[\d+\]/.test(part) ? part.replace(/(\[\d+\])/g, '<sup>$1</sup>') : part) // Make all references superscript if they're not at the start of a paragraph
         .join('<p>')
     }
   },
