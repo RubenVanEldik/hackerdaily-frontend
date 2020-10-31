@@ -51,7 +51,7 @@ export default {
     },
     defaultOptions: {
       $query: {
-        fetchPolicy: 'cache-and-network'
+        fetchPolicy: 'cache-first' // The cache doesn't work correctly when the 'cache-and-network' policy is used
       }
     }
   },
