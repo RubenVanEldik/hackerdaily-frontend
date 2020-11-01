@@ -1,7 +1,11 @@
 <template>
   <span class="text-lg sm:text-base text-gray-900 dark:text-gray-100">
     <span v-if="story.webpage && story.webpage.article">
-      <story-overview-title-icon />
+      <icon
+        icon="book"
+        size="xs"
+        class="h-4 mr-1"
+      />
       <nuxt-link
         :to="`/${story.id}/article`"
         class="hover:underline"
