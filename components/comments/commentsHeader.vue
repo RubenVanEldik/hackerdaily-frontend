@@ -7,21 +7,20 @@
     />
     <h1 v-text="storyTitle" />
     <div class="flex flex-col italic">
-      <div v-text="`${story.score} points, posted by ${story.user_id }`" />
-      <div>
-        <a
-          v-if="story.url"
-          :href="story.url"
-          v-text="siteName"
-        />
-      </div>
-      <div>
-        <nuxt-link
-          v-if="story.webpage && story.webpage.article"
-          :to="`/${$route.params.story}/article`"
-          v-text="`${story.webpage.article.expected_reading_time} minute read`"
-        />
-      </div>
+      <icon-with-text
+        :text="`${story.score} points`"
+        icon="star"
+      />
+      <icon-with-text
+        :text="siteName"
+        :href="story.url"
+        icon="globe-africa"
+      />
+      <icon-with-text
+        :text="`${story.webpage.article.expected_reading_time} minute read`"
+        :to="`/${$route.params.story}/article`"
+        icon="book"
+      />
     </div>
     <p
       v-if="story.text"
