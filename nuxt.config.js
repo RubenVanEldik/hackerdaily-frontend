@@ -32,6 +32,7 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/fontawesome',
     '@teamnovu/nuxt-breaky'
   ],
   modules: [
@@ -68,6 +69,12 @@ export default {
       background_color: '#f6f6ef',
       display: 'standalone',
       theme_color: '#c53030'
+    }
+  },
+  fontawesome: {
+    component: 'Icon',
+    icons: {
+      solid: ['faThumbtack', 'faBook', 'faStar', 'faCalendarDay', 'faPen', 'faGlobeAfrica', 'faComments']
     }
   }
 }
