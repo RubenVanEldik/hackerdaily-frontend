@@ -3,6 +3,7 @@
     <h1 v-text="article.headline" />
     <div class="flex flex-col italic">
       <icon-with-text
+        v-if="datePublished"
         :text="datePublished"
         icon="calendar-day"
       />
