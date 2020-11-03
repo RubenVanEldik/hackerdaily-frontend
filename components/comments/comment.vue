@@ -20,19 +20,16 @@
         v-text="dayjs(comment.posted_at).fromNow()"
       />
     </div>
-    <div
-      v-show="showComment"
-      class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words"
-      style="max-width: 100%"
-      v-html="parsedText"
-    />
-    <div
-      v-show="showComment"
-      class="ml-5 sm:ml-6"
-    >
+    <div v-show="showComment">
+      <div
+        class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words"
+        style="max-width: 100%"
+        v-html="parsedText"
+      />
       <comment
         v-for="childComment in comment.comments"
         :key="childComment.id"
+        class="ml-5 sm:ml-6"
         :comment="childComment"
       />
     </div>
