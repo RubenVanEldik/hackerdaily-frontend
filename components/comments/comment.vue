@@ -76,7 +76,23 @@ export default {
           }
           return part
         })
-        .map(part => !/^\[\d+\]/.test(part) ? part.replace(/(\[\d+\])/g, '<sup>$1</sup>') : part) // Make all references superscript if they're not at the start of a paragraph
+        .map((part) => {
+          if (/^\[\d+\]/.test(part)) return part
+
+          // Make all references in the text self superscript
+          return part.replace(/ ?\[(\d+)\]/g, (fullRegex, digit) => {
+            const currentReference = new RegExp('^\\[' + digit + '\\]')
+            return parts.some(part => currentReference.test(part))
+              ? `<sup><a href="#${this.comment.id}-ref${digit}">[${digit}]</a></sup>`
+              : `<sup class="text-gray-600 dark:text-gray-500">[${digit}]</sup>`
+          })
+        })
+        .map((part, index) => {
+          if (!/^\[\d+\]/.test(part)) return part
+
+          // Give all references at the end of a comment a grayed out reference number
+          return part.replace(/^\[(\d+)\](?::| - )?(.+)/, `<span id="${this.comment.id}-ref$1"><span class="mr-1 text-gray-600 dark:text-gray-500">[$1]</span>$2</span>`)
+        })
         .join('<p>')
     }
   },
