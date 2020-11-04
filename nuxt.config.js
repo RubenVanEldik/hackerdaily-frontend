@@ -42,6 +42,9 @@ export default {
   ],
   build: {
   },
+  generate: {
+    fallback: true
+  },
   sentry: {
     dsn: process.env.SENTRY_DSN,
     disabled: process.env.NODE_ENV !== 'production'
