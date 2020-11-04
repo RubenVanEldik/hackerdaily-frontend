@@ -30,11 +30,11 @@ export default {
     { src: '~/plugins/simpleAnalytics', mode: 'client' }
   ],
   buildModules: [
-    '@nuxtjs/eslint-module',
+    process.env.NODE_ENV !== 'production' && '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
     '@teamnovu/nuxt-breaky'
-  ],
+  ].filter(Boolean),
   modules: [
     '@nuxtjs/sentry',
     '@nuxtjs/apollo',
