@@ -35,7 +35,6 @@ export default {
     '@teamnovu/nuxt-breaky'
   ].concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/eslint-module' : []),
   modules: [
-    '@nuxtjs/sentry',
     '@nuxtjs/apollo',
     '@nuxtjs/pwa'
   ],
@@ -43,10 +42,6 @@ export default {
   },
   generate: {
     fallback: true
-  },
-  sentry: {
-    dsn: process.env.SENTRY_DSN,
-    disabled: process.env.NODE_ENV !== 'production'
   },
   apollo: {
     clientConfigs: {
