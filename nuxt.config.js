@@ -30,10 +30,10 @@ export default {
     { src: '~/plugins/simpleAnalytics', mode: 'client' }
   ],
   buildModules: [
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
     '@teamnovu/nuxt-breaky'
-  ].concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/eslint-module' : []),
+  ].concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/eslint-module' : [])
+    .concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/tailwindcss' : []),
   modules: [
     '@nuxtjs/apollo',
     '@nuxtjs/pwa'
