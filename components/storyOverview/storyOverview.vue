@@ -11,12 +11,12 @@
       :story="story"
       :position="index + 1"
     />
-    <nuxt-link
+    <!-- <nuxt-link
       to="/feedback"
       class="block bg-gray-200 dark:bg-gray-700 rounded p-2 mt-4 text-center text-gray-700 dark:text-gray-300"
     >
       This is a beta, let me know what you think! 🙏
-    </nuxt-link>
+    </nuxt-link> -->
   </fallback>
 </template>
 
