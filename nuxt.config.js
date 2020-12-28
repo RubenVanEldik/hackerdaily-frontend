@@ -29,10 +29,10 @@ export default {
   plugins: [
     { src: '~/plugins/simpleAnalytics', mode: 'client' }
   ],
-  buildModules: [
-    '@nuxtjs/fontawesome',
-    '@teamnovu/nuxt-breaky'
-  ].concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/eslint-module' : [])
+  buildModules: []
+    .concat(process.env.NODE_ENV === 'production' ? '@teamnovu/nuxt-breaky' : [])
+    .concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/fontawesome' : [])
+    .concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/eslint-module' : [])
     .concat(process.env.NODE_ENV === 'production' ? '@nuxtjs/tailwindcss' : []),
   modules: [
     '@nuxtjs/apollo',
