@@ -5,12 +5,6 @@ query ($startDate: timestamptz!, $endDate: timestamptz!) {
     url
     score
     descendants
-    webpage {
-      article {
-        id
-        expected_reading_time
-      }
-    }
     user_id
   }
 }

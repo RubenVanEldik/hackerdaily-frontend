@@ -17,12 +17,6 @@
         :href="story.url"
         icon="globe-africa"
       />
-      <icon-with-text
-        v-if="story.webpage && story.webpage.article"
-        :text="`${story.webpage.article.expected_reading_time} minute read`"
-        :to="`/${$route.params.story}/article`"
-        icon="book"
-      />
     </div>
     <p
       v-if="story.text"
