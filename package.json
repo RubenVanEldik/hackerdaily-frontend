@@ -18,8 +18,12 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/tailwindcss": "^2.0.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "@tailwindcss/typography": "^0.1.4",
     "@teamnovu/nuxt-breaky": "^1.2.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
     "apollo-cache-inmemory": "^1.6.6",
     "dayjs": "^1.8.29",
     "graphql-tag": "^2.10.4",
@@ -28,12 +32,8 @@
     "url-parse": "^1.4.7"
   },
   "devDependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxtjs/eslint-config": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/tailwindcss": "^2.0.0",
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
