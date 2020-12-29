@@ -11,7 +11,7 @@ import dayjs from 'dayjs'
 export default {
   validate ({ params }) {
     const weekDays = [...Array(7).keys()].map(index => dayjs().subtract(index, 'day').format('dddd').toLowerCase())
-    return weekDays.includes(params.day)
+    return weekDays.includes(params.weekday)
   },
   middleware: ({ route, redirect }) => {
     const today = dayjs().subtract(1, 'day').format('dddd')
@@ -20,7 +20,7 @@ export default {
   computed: {
     daysAgo () {
       const days = [...Array(7).keys()].map(day => day + 1)
-      const pageDay = this.$route.params.day
+      const pageDay = this.$route.params.weekday
 
       return days.find(counter => dayjs().subtract(counter, 'day').format('dddd').toLowerCase() === pageDay)
     },
