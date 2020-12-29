@@ -1,17 +1,16 @@
 <template>
   <story-overview
-    :stories="stories"
-    :loading="$apollo.loading || onServerSide"
+    :start-date="startDate"
+    :end-date="endDate"
   />
 </template>
 
 <script>
 import dayjs from 'dayjs'
-import query from '~/apollo/storiesWithinTimeframeQuery.gql'
 
 export default {
   validate ({ params }) {
-    const weekDays = Array(7).fill(null).map((_, index) => dayjs().subtract(index + 1, 'day').format('dddd').toLowerCase())
+    const weekDays = [...Array(7).keys()].map(index => dayjs().subtract(index, 'day').format('dddd').toLowerCase())
     return weekDays.includes(params.day)
   },
   middleware: ({ route, redirect }) => {
@@ -19,29 +18,17 @@ export default {
     if (`/${today.toLowerCase()}` === route.path) redirect('/')
   },
   computed: {
-    onServerSide () {
-      return !process.client
-    }
-  },
-  apollo: {
-    stories: {
-      query,
-      skip () {
-        return this.onServerSide
-      },
-      variables () {
-        const pageDay = this.$route.params.day
+    daysAgo () {
+      const days = [...Array(7).keys()].map(day => day + 1)
+      const pageDay = this.$route.params.day
 
-        for (let counter = 1; counter < 8; counter++) {
-          const day = dayjs().subtract(counter, 'day').format('dddd').toLowerCase()
-
-          if (day === pageDay) {
-            const startDate = dayjs().subtract(counter, 'day').startOf('day').toISOString()
-            const endDate = dayjs().subtract(counter, 'day').endOf('day').toISOString()
-            return { startDate, endDate }
-          }
-        }
-      }
+      return days.find(counter => dayjs().subtract(counter, 'day').format('dddd').toLowerCase() === pageDay)
+    },
+    startDate () {
+      return dayjs().subtract(this.daysAgo, 'day').startOf('day').toISOString()
+    },
+    endDate () {
+      return dayjs().subtract(this.daysAgo, 'day').endOf('day').toISOString()
     }
   }
 }

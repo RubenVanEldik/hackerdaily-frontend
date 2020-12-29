@@ -1,6 +1,6 @@
 <template>
   <fallback
-    :is-loading="loading"
+    :is-loading="$apollo.loading"
     :is-empty="!stories || !stories.length"
     loading-message="Loading stories..."
     empty-message="There are no stories saved for this day."
@@ -21,16 +21,28 @@
 </template>
 
 <script>
+import query from '~/apollo/storiesWithinTimeframeQuery.gql'
+
 export default {
   props: {
-    stories: {
-      type: Array,
-      required: false,
-      default: null
-    },
-    loading: {
-      type: Boolean,
+    startDate: {
+      type: String,
       required: true
+    },
+    endDate: {
+      type: String,
+      required: true
+    }
+  },
+  apollo: {
+    stories: {
+      query,
+      variables () {
+        return {
+          startDate: this.startDate,
+          endDate: this.endDate
+        }
+      }
     }
   }
 }
