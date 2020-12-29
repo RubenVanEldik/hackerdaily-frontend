@@ -32,7 +32,7 @@ export default {
     currentPage () {
       return this.$route.path === '/'
         ? this.today.subtract(1, 'day').format('dddd').toLowerCase()
-        : this.$route.params.day
+        : this.$route.params.weekday
     }
   },
   mounted () {
