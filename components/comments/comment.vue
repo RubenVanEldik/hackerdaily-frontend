@@ -19,6 +19,10 @@
         rel="noopener"
         v-text="dayjs(comment.posted_at).fromNow()"
       />
+      <span
+        v-if="!showComment"
+        v-text="`· [${comment.descendants + 1} more]`"
+      />
     </div>
     <div v-show="showComment">
       <div

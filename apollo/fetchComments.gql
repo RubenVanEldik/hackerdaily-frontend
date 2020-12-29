@@ -12,6 +12,7 @@ query ($id: Int!) {
       posted_at
       user_id
       score
+      descendants
       parent_comment_id
     }
   }
