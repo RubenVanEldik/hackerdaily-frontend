@@ -32,6 +32,10 @@ module.exports = {
       default: {
         css: {
           color: theme('colors.gray.700'),
+          p: {
+            marginTop: '0.5em',
+            marginBottom: '0.5em'
+          },
           a: {
             color: theme('colors.red.700'),
             textDecoration: 'no-underline'
