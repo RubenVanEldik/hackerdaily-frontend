@@ -30,6 +30,11 @@ export default {
     endDate () {
       return dayjs().subtract(this.daysAgo, 'day').endOf('day').toISOString()
     }
+  },
+  head () {
+    return {
+      title: this.$route.params.weekday.charAt(0).toUpperCase() + this.$route.params.weekday.slice(1)
+    }
   }
 }
 </script>
