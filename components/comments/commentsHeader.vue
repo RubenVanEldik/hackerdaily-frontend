@@ -5,7 +5,7 @@
       class="mb-1"
       large
     />
-    <h1 v-text="storyTitle" />
+    <h2 v-text="storyTitle" />
     <div class="flex flex-col italic">
       <icon-with-text
         :text="`${story.score} points`"
