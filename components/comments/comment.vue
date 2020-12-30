@@ -33,7 +33,7 @@
       <comment
         v-for="childComment in comment.comments"
         :key="childComment.id"
-        class="ml-5 sm:ml-6"
+        class="ml-4 sm:ml-5 md:ml-6"
         :comment="childComment"
       />
     </div>

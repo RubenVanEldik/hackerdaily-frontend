@@ -2,7 +2,7 @@
   <component
     :is="isActive ? 'div' : 'nuxt-link'"
     :to="link"
-    class="xl text-lg sm:text-base px-2 sm:px-3 md:px-4"
+    class="xl text-lg sm:text-base px-2 md:px-3"
     :class="{ 'font-semibold': isActive, 'hover:underline': !isActive }"
     v-text="text"
   />
