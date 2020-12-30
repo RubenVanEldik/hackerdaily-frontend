@@ -11,6 +11,9 @@ module.exports = {
       mono: ['"Source Code Pro"', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
     },
     extend: {
+      screens: {
+        dark: { raw: '(prefers-color-scheme: dark)' }
+      },
       colors: {
         gray: {
           100: '#f6f6ef',
@@ -24,9 +27,6 @@ module.exports = {
           900: '#181817'
         }
       }
-    },
-    screens: {
-      dark: { raw: '(prefers-color-scheme: dark)' }
     },
     typography: theme => ({
       default: {
