@@ -5,7 +5,7 @@ export default {
   components: true,
   publicRuntimeConfig: {
     NODE_ENV: process.env.NODE_ENV,
-    BACKEND_URL: process.env.BACKEND_URL,
+    BACKEND_URL: `https://${process.env.BACKEND_URL}`,
     SIMPLE_ANALYTICS_URL: process.env.SIMPLE_ANALYTICS_URL
   },
   privateRuntimeConfig: {
@@ -23,7 +23,7 @@ export default {
       { href: '/splashscreens/ipadpro3_splash.png', media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)', rel: 'apple-touch-startup-image' },
       { href: '/splashscreens/ipadpro2_splash.png', media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)', rel: 'apple-touch-startup-image' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preconnect', href: process.env.BACKEND_URL }
+      { rel: 'preconnect', href: `https://${process.env.BACKEND_URL}` }
     ]
   },
   plugins: [
