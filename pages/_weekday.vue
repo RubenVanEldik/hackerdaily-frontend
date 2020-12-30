@@ -14,8 +14,8 @@ export default {
     return weekDays.includes(params.weekday)
   },
   middleware: ({ route, redirect }) => {
-    const today = dayjs().subtract(1, 'day').format('dddd')
-    if (`/${today.toLowerCase()}` === route.path) redirect('/')
+    const yesterday = dayjs().subtract(1, 'day').format('dddd')
+    if (`/${yesterday.toLowerCase()}` === route.path) redirect('/')
   },
   computed: {
     daysAgo () {
