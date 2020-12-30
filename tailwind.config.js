@@ -56,6 +56,8 @@ module.exports = {
             borderColor: theme('colors.gray.300')
           },
           blockquote: {
+            marginTop: '0.8em',
+            marginBottom: '0.8em',
             color: theme('colors.gray.900'),
             borderLeftColor: theme('colors.gray.300')
           },
@@ -95,6 +97,8 @@ module.exports = {
             color: theme('colors.gray.900')
           },
           pre: {
+            marginTop: '0.8em',
+            marginBottom: '0.8em',
             color: theme('colors.gray.200'),
             backgroundColor: theme('colors.gray.800')
           },
