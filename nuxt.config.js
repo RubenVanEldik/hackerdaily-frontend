@@ -2,6 +2,11 @@ export default {
   ssr: false,
   target: 'server',
   loading: false,
+  loadingIndicator: {
+    name: 'pulse',
+    color: '#b91c1c',
+    background: '#f6f6ef'
+  },
   components: true,
   publicRuntimeConfig: {
     NODE_ENV: process.env.NODE_ENV,
