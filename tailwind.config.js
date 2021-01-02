@@ -71,6 +71,8 @@ module.exports = {
             color: theme('colors.gray.900')
           },
           h2: {
+            marginTop: '0.8em',
+            marginBottom: '0.8em',
             color: theme('colors.gray.900')
           },
           h3: {
