@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="prose dark:prose-dark">
     <story-type-badge

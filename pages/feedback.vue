@@ -39,9 +39,6 @@
 import feedbackMutation from '~/apollo/sendFeedback.gql'
 
 export default {
-  head: {
-    title: 'Feedback'
-  },
   data () {
     return {
       whyUseIt: null,
@@ -63,6 +60,9 @@ export default {
         this.feedbackReceived = true
       })
     }
+  },
+  head: {
+    title: 'Feedback'
   }
 }
 </script>
