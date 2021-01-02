@@ -7,16 +7,27 @@
     />
     <h2 v-text="storyTitle" />
     <div class="flex flex-col italic">
-      <icon-with-text
-        :text="`${story.score} points`"
-        icon="star"
-      />
-      <icon-with-text
-        v-if="story.url"
-        :text="siteName"
-        :href="story.url"
-        icon="globe-africa"
-      />
+      <span>
+        <icon
+          class="mr-1"
+          icon="star"
+          size="sm"
+        />
+        <span v-text="`${story.score} points`" />
+      </span>
+      <span v-if="story.url">
+        <icon
+          :class="`mr-1 text-red-700 dark:text-red-600`"
+          icon="globe-africa"
+          size="sm"
+        />
+        <a
+          :href="story.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-text="siteName"
+        />
+      </span>
     </div>
     <p
       v-if="story.text"
