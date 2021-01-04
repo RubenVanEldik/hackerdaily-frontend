@@ -34,7 +34,7 @@ export default {
   plugins: [
     { src: '~/plugins/simpleAnalytics', mode: 'client' }
   ],
-  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/fontawesome']
+  buildModules: ['@nuxtjs/tailwindcss']
     .concat(process.env.NODE_ENV !== 'production' ? '@teamnovu/nuxt-breaky' : [])
     .concat(process.env.NODE_ENV !== 'production' ? '@nuxtjs/eslint-module' : []),
   modules: [
@@ -70,12 +70,6 @@ export default {
       background_color: '#f6f6ef',
       display: 'standalone',
       theme_color: '#c53030'
-    }
-  },
-  fontawesome: {
-    component: 'Icon',
-    icons: {
-      solid: ['faThumbtack', 'faBook', 'faStar', 'faCalendarDay', 'faPen', 'faGlobeAfrica', 'faComments']
     }
   }
 }
