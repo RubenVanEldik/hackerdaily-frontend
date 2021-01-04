@@ -63,7 +63,8 @@ export default {
     meta: {
       viewport: 'width=device-width, initial-scale=1',
       theme_color: '#c53030',
-      mobileAppIOS: true
+      mobileAppIOS: true,
+      appleStatusBarStyle: 'black'
     },
     manifest: {
       background_color: '#f6f6ef',
