@@ -10,17 +10,15 @@
     <div class="flex flex-col italic">
       <span>
         <icon
-          class="mr-1"
+          class="mr-1 h-4 py-px"
           icon="star"
-          size="sm"
         />
         <span v-text="`${story.score} points`" />
       </span>
       <span v-if="story.url">
         <icon
-          :class="`mr-1 text-red-700 dark:text-red-600`"
-          icon="globe-africa"
-          size="sm"
+          :class="`mr-1 h-4 py-px text-red-700 dark:text-red-600`"
+          icon="globe"
         />
         <a
           :href="story.url"
