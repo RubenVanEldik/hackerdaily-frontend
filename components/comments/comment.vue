@@ -27,8 +27,7 @@
     </div>
     <div v-show="showComment">
       <div
-        class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words"
-        style="max-width: 100%"
+        class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words max-w-none"
         v-html="parsedText"
       />
       <comment
