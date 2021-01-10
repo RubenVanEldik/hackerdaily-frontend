@@ -3,6 +3,8 @@
     <a
       v-if="story.url"
       :href="story.url"
+      target="_blank"
+      rel="noopener noreferrer"
       v-text="storyTitle"
     />
     <nuxt-link

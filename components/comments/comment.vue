@@ -17,7 +17,7 @@
       <a
         :href="`https://news.ycombinator.com/item?id=${comment.id}`"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         v-text="dayjs(comment.posted_at).fromNow()"
       />
       <span
