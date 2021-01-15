@@ -1,41 +1,43 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div class="relative my-5">
+  <div class="relative flex my-5">
     <div
-      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 dark:text-gray-100 hover:text-gray-400"
+      class="self-stretch p-2 sm:mx-1 cursor-pointer opacity-25 hover:opacity-100 transition-opacity duration-150"
       role="button"
       tabindex="0"
       aria-label="Minimize comment"
       @click="toggleComment"
-      v-text="showComment ? '−' : '+'"
-    />
-    <div
-      :id="`comment-${comment.id}`"
-      class="absolute -mt-8 leading-8 ml-6 text-gray-700 dark:text-gray-100 font-semibold"
     >
-      <span v-text="`${comment.user_id || '[deleted]'} · `" />
-      <a
-        :href="`https://news.ycombinator.com/item?id=${comment.id}`"
-        target="_blank"
-        rel="noopener noreferrer"
-        v-text="dayjs(comment.posted_at).fromNow()"
-      />
-      <span
-        v-if="!showComment"
-        v-text="`· [${comment.descendants + 1} more]`"
-      />
+      <div class="h-full w-1 bg-gray-300 dark:bg-gray-600 rounded-sm" />
     </div>
-    <div v-show="showComment">
+    <div>
       <div
-        class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words max-w-none"
-        v-html="parsedText"
-      />
-      <comment
-        v-for="childComment in comment.comments"
-        :key="childComment.id"
-        class="ml-4 sm:ml-5"
-        :comment="childComment"
-      />
+        :id="`comment-${comment.id}`"
+        class="text-gray-700 dark:text-gray-100 font-semibold"
+      >
+        <span v-text="`${comment.user_id || '[deleted]'} · `" />
+        <a
+          :href="`https://news.ycombinator.com/item?id=${comment.id}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-text="dayjs(comment.posted_at).fromNow()"
+        />
+        <span
+          v-if="!showComment"
+          v-text="`· [${comment.descendants + 1} more]`"
+        />
+      </div>
+      <div v-show="showComment">
+        <div
+          class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words max-w-none"
+          v-html="parsedText"
+        />
+        <comment
+          v-for="childComment in comment.comments"
+          :key="childComment.id"
+          :comment="childComment"
+        />
+      </div>
     </div>
   </div>
 </template>
