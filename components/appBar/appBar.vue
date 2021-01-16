@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full flex flex-row align-center justify-between sm:justify-start py-6 overflow-auto sm:overflow-visible text-red-700 dark:text-red-600">
+  <header class="w-full flex flex-row align-center justify-between sm:justify-start py-6 overflow-auto sm:overflow-visible text-red-700 dark:text-red-500">
     <div class="mr-2">
       <icon
         class="h-5"

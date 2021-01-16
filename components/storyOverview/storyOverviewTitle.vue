@@ -1,5 +1,5 @@
 <template>
-  <span class="text-lg sm:text-base text-gray-900 dark:text-gray-100">
+  <span class="text-lg sm:text-base leading-tight text-gray-900 dark:text-gray-100">
     <a
       v-if="story.url"
       :href="story.url"

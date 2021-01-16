@@ -17,7 +17,7 @@
       </span>
       <span v-if="story.url">
         <icon
-          :class="`mr-1 h-4 py-px text-red-700 dark:text-red-600`"
+          :class="`mr-1 h-4 py-px text-red-700 dark:text-red-500`"
           icon="globe"
         />
         <a
