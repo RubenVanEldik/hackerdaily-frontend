@@ -117,7 +117,7 @@ module.exports = {
         css: {
           color: theme('colors.gray.300'),
           a: {
-            color: theme('colors.red.600')
+            color: theme('colors.red.500')
           },
           strong: {
             color: theme('colors.gray.200')
