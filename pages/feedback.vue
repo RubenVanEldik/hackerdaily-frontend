@@ -27,8 +27,8 @@
     >
     <button
       class="text-white text-sm py-1 px-2 rounded-sm"
-      :class="feedbackReceived ? 'bg-gray-600 cursor-auto' : 'bg-red-700 dark:bg-red-600'"
-      :disabled="feedbackReceived"
+      :class="submitButtonDisabled ? 'bg-gray-600 cursor-auto' : 'bg-red-700 dark:bg-red-600'"
+      :disabled="submitButtonDisabled"
       @click="sendFeedback"
       v-text="feedbackReceived ? 'Thank you for your feedback!' : 'Send feedback'"
     />
@@ -45,6 +45,11 @@ export default {
       toBeImproved: null,
       email: null,
       feedbackReceived: false
+    }
+  },
+  computed: {
+    submitButtonDisabled () {
+      return (!this.whyUseIt && !this.toBeImproved) || this.feedbackReceived
     }
   },
   methods: {
