@@ -5,10 +5,10 @@
       :to="story.url"
       :text="storyTitle"
     />
-    <nuxt-link
+    <internal-link
       v-else
       :to="`/${story.id}/comments`"
-      v-text="storyTitle"
+      :text="storyTitle"
     />
   </span>
 </template>

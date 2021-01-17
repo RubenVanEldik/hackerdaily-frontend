@@ -5,9 +5,10 @@
       <nuxt />
     </main>
     <footer class="mb-4 text-sm text-center text-gray-600 italic">
-      <nuxt-link to="/contact">
-        Made with ♥ in Europe
-      </nuxt-link>
+      <internal-link
+        to="/contact"
+        text="Made with ♥ in Europe"
+      />
     </footer>
   </div>
 </template>

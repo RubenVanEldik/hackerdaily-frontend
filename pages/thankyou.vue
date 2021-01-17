@@ -19,7 +19,7 @@
       I would really appreciate it if you could help me out with second point. I am still a student, and even though the server bills aren't super high, the cost of running a mirror of all Hacker News stories and comments is not nothing, especially over the long run.
     </p>
     <p>
-      If you have any feedback on how to improve HackerDaily, please leave a message with the <nuxt-link to="/feedback">feedback form</nuxt-link>.
+      If you have any feedback on how to improve HackerDaily, please leave a message with the <internal-link to="/feedback" text="feedback form" />.
     </p>
     <external-link
       to="https://github.com/sponsors/RubenVanEldik"
