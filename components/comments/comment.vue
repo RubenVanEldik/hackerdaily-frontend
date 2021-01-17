@@ -16,11 +16,9 @@
         class="text-gray-700 dark:text-gray-100 font-semibold"
       >
         <span v-text="`${comment.user_id || '[deleted]'} · `" />
-        <a
-          :href="`https://news.ycombinator.com/item?id=${comment.id}`"
-          target="_blank"
-          rel="noopener noreferrer"
-          v-text="dayjs(comment.posted_at).fromNow()"
+        <external-link
+          :to="`https://news.ycombinator.com/item?id=${comment.id}`"
+          :text="dayjs(comment.posted_at).fromNow()"
         />
         <span
           v-if="!showComment"

@@ -1,11 +1,9 @@
 <template>
   <span class="text-lg sm:text-base leading-tight text-gray-900 dark:text-gray-100">
-    <a
+    <external-link
       v-if="story.url"
-      :href="story.url"
-      target="_blank"
-      rel="noopener noreferrer"
-      v-text="storyTitle"
+      :to="story.url"
+      :text="storyTitle"
     />
     <nuxt-link
       v-else

@@ -20,11 +20,9 @@
           :class="`mr-1 h-4 py-px text-red-700 dark:text-red-500`"
           icon="globe"
         />
-        <a
-          :href="story.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          v-text="siteName"
+        <external-link
+          :to="story.url"
+          :text="siteName"
         />
       </span>
     </div>

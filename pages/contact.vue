@@ -10,9 +10,10 @@
         feedback form
       </nuxt-link>
       or via
-      <a href="mailto:contact@hackerdaily.io">
-        contact@hackerdaily.io
-      </a>.
+      <external-link
+        to="mailto:contact@hackerdaily.io"
+        text="contact@hackerdaily.io"
+      />.
     </p>
   </div>
 </template>
