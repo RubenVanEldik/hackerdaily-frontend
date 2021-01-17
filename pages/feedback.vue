@@ -8,25 +8,20 @@
     <div>
       If you have any feedback, please let me know!
     </div>
-    <textarea
+    <textarea-input
       v-model="whyUseIt"
-      class="my-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
-      rows="3"
       placeholder="Why do you use HackerDaily?"
     />
-    <textarea
+    <textarea-input
       v-model="toBeImproved"
-      class="mb-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
-      rows="3"
       placeholder="What can be improved?"
     />
-    <input
+    <text-input
       v-model="email"
-      class="w-full mb-4 p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
       placeholder="Email (only necessary if you prefer a response)"
-    >
+    />
     <button
-      class="text-white text-sm py-1 px-2 rounded-sm"
+      class="text-white text-sm py-1 px-2 rounded-sm focus:outline-none focus:ring-1 focus:ring-current"
       :class="submitButtonDisabled ? 'bg-gray-600 cursor-auto' : 'bg-red-700 dark:bg-red-600'"
       :disabled="submitButtonDisabled"
       @click="sendFeedback"
