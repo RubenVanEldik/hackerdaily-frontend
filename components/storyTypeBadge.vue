@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="storyType"
-    class="bg-red-700 inline-block leading-normal text-orange-100 rounded-sm"
+    class="bg-red-700 inline-block leading-normal text-red-50 rounded-sm"
     :class="{ 'text-sm sm:text-xs h-5 sm:h-4 mr-1 px-1': !large, 'px-2': large }"
     v-text="storyType"
   />
