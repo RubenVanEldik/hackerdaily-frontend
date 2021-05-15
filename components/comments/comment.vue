@@ -7,7 +7,7 @@
       tabindex="0"
       aria-label="Minimize comment"
       @click="toggleComment"
-      v-text="showComment ? '−' : '+'"
+      v-text="isCollapsed ? '+' : '−'"
     />
     <div
       :id="`comment-${comment.id}`"
@@ -21,11 +21,11 @@
         v-text="dayjs(comment.posted_at).fromNow()"
       />
       <span
-        v-if="!showComment"
+        v-if="isCollapsed"
         v-text="`· [${comment.descendants + 1} more]`"
       />
     </div>
-    <div v-show="showComment">
+    <div v-show="!isCollapsed">
       <div
         class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words max-w-none"
         v-html="parsedText"
@@ -56,7 +56,7 @@ export default {
   },
   data () {
     return {
-      showComment: true
+      isCollapsed: !!localStorage.getItem(`${this.comment.id}_collapsed`)
     }
   },
   computed: {
@@ -103,7 +103,13 @@ export default {
   methods: {
     dayjs,
     toggleComment () {
-      this.showComment = !this.showComment
+      this.isCollapsed = !this.isCollapsed
+
+      if (this.isCollapsed) {
+        localStorage.setItem(`${this.comment.id}_collapsed`, true)
+      } else {
+        localStorage.removeItem(`${this.comment.id}_collapsed`)
+      }
 
       // Scroll to the top of the comment if the header of the comment is out of the viewport
       const element = document.getElementById(`comment-${this.comment.id}`)
