@@ -15,7 +15,7 @@
       to="/thankyou"
       class="block bg-gray-200 dark:bg-gray-700 rounded p-2 pt-3 mb-4 text-center text-gray-700 dark:text-gray-300"
     >
-      HackerDaily has had over a 100.000 pageviews! Thank you!! 🎉🎉🎉
+      Help make HackerDaily become sustainable for the long run
     </nuxt-link>
     <!-- <nuxt-link
       to="/feedback"
