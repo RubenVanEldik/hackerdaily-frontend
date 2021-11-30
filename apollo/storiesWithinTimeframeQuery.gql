@@ -2,6 +2,7 @@ query ($startDate: timestamptz!, $endDate: timestamptz!) {
   stories(where: {dead: {_eq: false}, score: {_gte: 100}, posted_at: {_gte: $startDate, _lte: $endDate}}, order_by: {score: desc}) {
     id
     title
+    text
     url
     score
     descendants
