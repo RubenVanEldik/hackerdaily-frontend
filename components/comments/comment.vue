@@ -27,7 +27,7 @@
     </div>
     <div v-show="!isCollapsed">
       <div
-        class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-800 break-words max-w-none"
+        class="relative prose dark:prose-dark bg-gray-100 dark:bg-gray-900 break-words max-w-none"
         v-html="parsedText"
       />
       <comment

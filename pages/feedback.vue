@@ -10,24 +10,24 @@
     </div>
     <textarea
       v-model="whyUseIt"
-      class="my-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
+      class="my-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-800 dark:text-gray-200"
       rows="3"
       placeholder="Why do you use HackerDaily?"
     />
     <textarea
       v-model="toBeImproved"
-      class="mb-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
+      class="mb-4 block w-full p-1 rounded-sm placeholder-gray-400 dark:bg-gray-800 dark:text-gray-200"
       rows="3"
       placeholder="What can be improved?"
     />
     <input
       v-model="email"
-      class="w-full mb-4 p-1 rounded-sm placeholder-gray-400 dark:bg-gray-700 dark:text-gray-200"
+      class="w-full mb-4 p-1 rounded-sm placeholder-gray-400 dark:bg-gray-800 dark:text-gray-200"
       placeholder="Email (only necessary if you prefer a response)"
     >
     <button
       class="text-white text-sm py-1 px-3 rounded-sm"
-      :class="submitButtonDisabled ? 'bg-gray-600 cursor-auto' : 'bg-red-700 dark:bg-red-600'"
+      :class="submitButtonDisabled ? 'bg-gray-700 cursor-auto' : 'bg-red-700 dark:bg-red-600'"
       :disabled="submitButtonDisabled"
       @click="sendFeedback"
       v-text="feedbackReceived ? 'Thank you for your feedback!' : 'Send feedback'"
