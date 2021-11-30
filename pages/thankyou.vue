@@ -23,7 +23,7 @@
     </p>
     <a
       href="https://github.com/sponsors/RubenVanEldik"
-      class="block w-full sm:w-auto mt-2 py-1 px-4 rounded-sm bg-red-700 dark:bg-red-600 text-center"
+      class="block w-full sm:w-auto mt-2 py-1 px-4 rounded-md bg-red-700 dark:bg-red-600 text-center"
     >
       <span class="text-sm text-white">
         Help HackerDaily become sustainable
