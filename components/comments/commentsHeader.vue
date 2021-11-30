@@ -33,6 +33,7 @@
       class="py-2 break-words"
       v-html="story.text"
     />
+    <comment-divider v-if="isLoading" />
   </div>
 </template>
 
@@ -43,6 +44,10 @@ export default {
   props: {
     story: {
       type: Object,
+      required: true
+    },
+    isLoading: {
+      type: Boolean,
       required: true
     }
   },

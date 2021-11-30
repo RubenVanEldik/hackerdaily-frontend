@@ -7,7 +7,7 @@
       v-for="comment in recursiveComments"
       :key="comment.id"
     >
-      <div class="border-t border-gray-200 dark:border-gray-700 my-6" />
+      <comment-divider />
       <comment :comment="comment" />
     </div>
   </fallback>

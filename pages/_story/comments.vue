@@ -3,6 +3,7 @@
     <comments-header
       v-if="story || storyPreview"
       :story="story || storyPreview"
+      :is-loading="$apollo.loading"
     />
     <fallback
       :is-loading="$apollo.loading"
