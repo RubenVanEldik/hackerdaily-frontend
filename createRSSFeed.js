@@ -13,14 +13,20 @@ dayjs.extend(timezone)
 const getTimeZones = () => {
   const timezones = [...new Set(Object.values(timezonesObject))]
 
-  return timezones.map((name) => {
-    const yesterday = dayjs.tz(dayjs(), name).subtract(1, 'day')
-    return {
-      name,
-      start: yesterday.startOf('day').toISOString(),
-      end: yesterday.endOf('day').toISOString()
-    }
-  })
+  return timezones
+    .map((timezone) => {
+      try {
+        const yesterday = dayjs.tz(dayjs(), timezone).subtract(1, 'day')
+        return {
+          name: timezone,
+          start: yesterday.startOf('day').toISOString(),
+          end: yesterday.endOf('day').toISOString()
+        }
+      } catch {
+        return null
+      }
+    })
+    .filter(timezone => !!timezone)
 }
 
 // Fetch all the stories for each unique timezone
