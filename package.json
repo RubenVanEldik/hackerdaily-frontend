@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.1.4",
     "@teamnovu/nuxt-breaky": "^1.2.1",
     "apollo-cache-inmemory": "^1.6.6",
+    "date-time-format-timezone": "^1.0.22",
     "dayjs": "^1.8.29",
     "graphql-tag": "^2.10.4",
     "nuxt": "^2.13.0",
