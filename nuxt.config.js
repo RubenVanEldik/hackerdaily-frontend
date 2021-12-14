@@ -1,3 +1,4 @@
+import createRSSFeed from './createRSSFeed'
 export default {
   ssr: false,
   target: 'server',
@@ -39,7 +40,8 @@ export default {
     .concat(process.env.NODE_ENV !== 'production' ? '@nuxtjs/eslint-module' : []),
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/feed'
   ],
   build: {
   },
@@ -71,5 +73,6 @@ export default {
       display: 'standalone',
       theme_color: '#c53030'
     }
-  }
+  },
+  feed: createRSSFeed
 }
