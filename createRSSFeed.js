@@ -74,7 +74,7 @@ export default async () => {
         }
         stories.forEach((story) => {
           feed.addItem({
-            id: story.id,
+            id: `${process.env.FRONTEND_URL}/${story.id}/comments`,
             title: story.title,
             link: `${process.env.FRONTEND_URL}/${story.id}/comments`
           })
