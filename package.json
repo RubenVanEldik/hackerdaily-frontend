@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.1",
-    "@nuxtjs/feed": "^2.0.0",
+    "@nuxtjs/feed": "github:nuxt-community/feed-module#master",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@tailwindcss/typography": "^0.1.4",
