@@ -70,7 +70,10 @@ export default async () => {
           description: 'A more informative and less addictive Hacker News.',
           language: 'en',
           image: `${process.env.FRONTEND_URL}/icon.png`,
-          favicon: `${process.env.FRONTEND_URL}/favicon.ico`
+          favicon: `${process.env.FRONTEND_URL}/favicon.ico`,
+          feedLinks: {
+            rss: `${process.env.FRONTEND_URL}/feed/${timezone.name.toLowerCase()}.xml`
+          }
         }
         stories.forEach((story) => {
           feed.addItem({
