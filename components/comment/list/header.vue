@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div class="prose dark:prose-dark">
+  <div class="prose dark:prose-dark max-w-none">
     <story-type-badge
       :title="story.title"
       class="mb-1"
