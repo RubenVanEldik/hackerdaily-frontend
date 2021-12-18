@@ -9,22 +9,24 @@
     </p>
 
     <div class="flex mt-5">
-      <select
-        v-model="selectedTimezone"
-        name="timezones"
-        class="appearance-none flex-grow px-4 bg-gray-200 bg-gray-800 rounded-r-none"
-      >
-        <option
-          v-for="timezone in timezones"
-          :key="timezone"
-          :value="timezone"
-          v-text="timezone"
-        />
-      </select>
+      <div class="flex-grow">
+        <select
+          v-model="selectedTimezone"
+          name="timezones"
+          class="appearance-none w-full h-full px-4 rounded-l-md bg-gray-200 dark:bg-gray-800"
+        >
+          <option
+            v-for="timezone in timezones"
+            :key="timezone"
+            :value="timezone"
+            v-text="timezone"
+          />
+        </select>
+      </div>
       <a
         v-if="selectedTimezone"
         :href="`/feed/${selectedTimezone.toLowerCase()}.xml`"
-        class="block w-full sm:w-auto py-1 px-4 rounded-r-md bg-red-700 text-center"
+        class="flex-shrink-0 py-1 px-4 rounded-r-md bg-red-700"
       >
         <span class="text-sm text-white">
           Open RSS feed
