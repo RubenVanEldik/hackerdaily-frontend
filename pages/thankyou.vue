@@ -1,5 +1,5 @@
 <template>
-  <div class="prose dark:prose-dark m-auto">
+  <text-page>
     <h2>Thank you!</h2>
     <p>
       HackerDaily started out as a personal project to learn a few new technologies, but it quickly grew larger. Many people are using HackerDaily on a daily basis to get a quick overview of the best articles and HN comments per day. The site currently has had more than a <a href="https://simpleanalytics.com/hackerdaily.io">a quarter of a million pageviews!</a> 🎉
@@ -29,7 +29,7 @@
         Help HackerDaily become sustainable
       </span>
     </a>
-  </div>
+  </text-page>
 </template>
 
 <script>

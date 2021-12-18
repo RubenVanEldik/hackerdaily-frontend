@@ -1,5 +1,5 @@
 <template>
-  <div class="prose dark:prose-dark m-auto">
+  <text-page>
     <h2>Feedback</h2>
     <div>
       I built this site primarily for myself, but since I shared it as a comment on HN a few people started using it. I am now trying to understand why people use the site and what can be improved.
@@ -32,7 +32,7 @@
       @click="sendFeedback"
       v-text="feedbackReceived ? 'Thank you for your feedback!' : 'Send feedback'"
     />
-  </div>
+  </text-page>
 </template>
 
 <script>

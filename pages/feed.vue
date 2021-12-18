@@ -1,5 +1,5 @@
 <template>
-  <div class="prose dark:prose-dark m-auto">
+  <text-page>
     <h2>We've got RSS!</h2>
     <p>
       After many requests we have finally created an RSS feed!
@@ -33,7 +33,7 @@
         </span>
       </a>
     </div>
-  </div>
+  </text-page>
 </template>
 
 <script>

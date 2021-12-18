@@ -1,5 +1,5 @@
 <template>
-  <div class="prose dark:prose-dark m-auto">
+  <text-page>
     <h2>Open source</h2>
     <p>
       Multiple early users asked how to contribute to HackerDaily and a few even wanted to build their own version. Therefore, I decided to make everything open source.
@@ -33,7 +33,7 @@
     <p>
       The importer program checks every 20 seconds what happened on Hacker News. It fetches these changes and updates the HackerDaily database.
     </p>
-  </div>
+  </text-page>
 </template>
 
 <script>
