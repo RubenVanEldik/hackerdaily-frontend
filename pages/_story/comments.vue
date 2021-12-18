@@ -1,6 +1,6 @@
 <template>
   <div>
-    <comments-header
+    <comment-list-header
       v-if="story || storyPreview"
       :story="story || storyPreview"
       :is-loading="$apollo.loading"
@@ -11,7 +11,7 @@
       loading-message="Loading comments..."
       empty-message="The comments for this story are not saved."
     >
-      <comments-all :story="story" />
+      <comment-list :story="story" />
     </fallback>
   </div>
 </template>
