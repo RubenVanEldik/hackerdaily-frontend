@@ -2,10 +2,10 @@
   <text-page>
     <h2>We've got RSS!</h2>
     <p>
-      After many requests we have finally created an RSS feed!
+      After many requests we've finally created an RSS feed!
     </p>
     <p>
-      Because what 'yesterday' is depends on where you're are, we've created an RSS feed for each time zone. You can select your preferred timezone below and you'll be redirected to the correct feed.
+      Because what 'yesterday' is depends on where you are, we've created an RSS feed for each time zone. You can select your preferred timezone below and you'll be redirected to the correct feed.
     </p>
 
     <div class="flex mt-5">
