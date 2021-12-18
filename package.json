@@ -28,7 +28,7 @@
     "graphql-import-node": "0.0.4",
     "graphql-request": "^3.7.0",
     "graphql-tag": "^2.10.4",
-    "nuxt": "^2.13.0",
+    "nuxt": "^2.15.8",
     "simple-analytics-vue": "^1.1.1",
     "url-parse": "^1.5.3"
   },
