@@ -13,7 +13,7 @@
         <select
           v-model="selectedTimezone"
           name="timezones"
-          class="appearance-none w-full h-full px-4 rounded-l-md bg-gray-200 dark:bg-gray-800"
+          class="appearance-none w-full h-full px-4 rounded-l-md rounded-r-none bg-gray-200 dark:bg-gray-800"
         >
           <option
             v-for="timezone in timezones"
