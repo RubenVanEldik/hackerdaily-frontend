@@ -4,7 +4,7 @@
     <main class="flex-grow mb-6 px-3 sm:px-0">
       <nuxt />
     </main>
-    <footer class="flex justify-center mb-5 text-sm text-gray-500 italic">
+    <footer class="flex justify-center mb-6 text-sm text-gray-500 italic">
       <nuxt-link to="/contact" class="mx-3">
         Contact
       </nuxt-link>
