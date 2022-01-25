@@ -61,7 +61,7 @@ export default {
   },
   computed: {
     parsedText () {
-      const parts = this.comment.text.split('<p>')
+      const parts = this.comment.text?.split('<p>') ?? [] // Dunno why, but /30054739/comments suddenly gave an error without the nullish coalescing
       return parts
         .map((part, index) => {
           // Check if the paragraph is a blockquote
