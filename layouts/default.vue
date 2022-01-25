@@ -4,9 +4,17 @@
     <main class="flex-grow mb-6 px-3 sm:px-0">
       <nuxt />
     </main>
-    <footer class="mb-4 text-sm text-center text-gray-600 italic">
-      <nuxt-link to="/contact">
-        Made with ♥ in Europe
+    <footer class="flex justify-center mb-5 text-sm text-gray-500 italic">
+      <nuxt-link to="/contact" class="mx-3">
+        Contact
+      </nuxt-link>
+      <span v-text="'·'" />
+      <nuxt-link to="/thankyou" class="mx-3">
+        Support
+      </nuxt-link>
+      <span v-text="'·'" />
+      <nuxt-link to="/feed" class="mx-3">
+        RSS
       </nuxt-link>
     </footer>
   </div>
