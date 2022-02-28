@@ -30,7 +30,7 @@
     "graphql-tag": "^2.12.6",
     "nuxt": "^2.15.8",
     "simple-analytics-vue": "^1.1.5",
-    "url-parse": "^1.5.3"
+    "url-parse": "^1.5.8"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
