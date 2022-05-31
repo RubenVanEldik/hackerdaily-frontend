@@ -10,7 +10,7 @@
       </nuxt-link>
       <span v-text="'·'" />
       <nuxt-link to="/thankyou" class="mx-3">
-        Support
+        Support us
       </nuxt-link>
       <span v-text="'·'" />
       <nuxt-link to="/feed" class="mx-3">
