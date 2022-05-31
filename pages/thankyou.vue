@@ -2,7 +2,7 @@
   <text-page>
     <h2>Thank you!</h2>
     <p>
-      HackerDaily started out as a personal project to learn a few new technologies, but it quickly grew larger. Many people are using HackerDaily on a daily basis to get a quick overview of the best articles and HN comments per day. The site currently has had more than a <a href="https://simpleanalytics.com/hackerdaily.io">a quarter of a million pageviews!</a> 🎉
+      HackerDaily started out as a personal project to learn a few new technologies, but it quickly grew larger. Many people are using HackerDaily on a daily basis to get a quick overview of the best articles and HN comments per day. The site currently has had more than a <a href="https://simpleanalytics.com/hackerdaily.io">half a million pageviews!</a> 🎉
     </p>
     <p>
       My goal for HackerDaily is to make the project sustainable for the long term. Building software for the long run means we have to do two things.
