@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     storyTitle () {
-      return this.story.title.replace(/^(Ask|Show) HN: /, '')
+      return this.story.title.replace(/^(Ask|Show|Tell) HN: /, '')
     }
   }
 }

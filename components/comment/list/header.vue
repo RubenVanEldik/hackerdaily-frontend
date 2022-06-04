@@ -57,7 +57,7 @@ export default {
       return host.replace('www.', '') || undefined
     },
     storyTitle () {
-      return this.story.title.replace(/^(Ask|Show) HN: /, '')
+      return this.story.title.replace(/^(Ask|Show|Tell) HN: /, '')
     }
   }
 }

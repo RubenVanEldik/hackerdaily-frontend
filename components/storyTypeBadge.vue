@@ -26,6 +26,8 @@ export default {
         return 'Ask HN'
       } else if (this.title.startsWith('Show HN: ')) {
         return 'Show HN'
+      } else if (this.title.startsWith('Tell HN: ')) {
+        return 'Tell HN'
       }
       return false
     }
