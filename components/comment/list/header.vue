@@ -22,7 +22,6 @@
         />
         <a
           :href="story.url"
-          target="_blank"
           rel="noopener noreferrer"
           v-text="siteName"
         />
