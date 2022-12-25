@@ -37,12 +37,14 @@
 </template>
 
 <script>
-import Url from 'url-parse'
-
 export default {
   props: {
     story: {
       type: Object,
+      required: true
+    },
+    siteName: {
+      type: String,
       required: true
     },
     isLoading: {
@@ -51,10 +53,6 @@ export default {
     }
   },
   computed: {
-    siteName () {
-      const { host } = new Url(this.story.url)
-      return host.replace('www.', '') || undefined
-    },
     storyTitle () {
       return this.story.title.replace(/^(Ask|Show|Tell) HN: /, '')
     }
