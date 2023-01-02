@@ -30,7 +30,7 @@ export default {
       return this.$apolloProvider.defaultClient.cache.data.data[`stories:${this.$route.params.story}`]
     },
     siteName () {
-      const storyUrl = this.story?.url ?? this.storyPreview.url
+      const storyUrl = this.story?.url ?? this.storyPreview?.url
 
       // Don't parse the URL if none is available
       if (!storyUrl) {
