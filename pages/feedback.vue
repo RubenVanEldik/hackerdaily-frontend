@@ -10,19 +10,19 @@
     </div>
     <textarea
       v-model="whyUseIt"
-      class="my-4 block w-full p-1 rounded-md placeholder-gray-400 dark:bg-gray-800 dark:text-gray-200"
+      :class="textInputClasses"
       rows="3"
       placeholder="Why do you use HackerDaily?"
     />
     <textarea
       v-model="toBeImproved"
-      class="mb-4 block w-full p-1 rounded-md placeholder-gray-400 dark:bg-gray-800 dark:text-gray-200"
+      :class="textInputClasses"
       rows="3"
       placeholder="What can be improved?"
     />
     <input
       v-model="email"
-      class="w-full mb-4 p-1 rounded-md placeholder-gray-400 dark:bg-gray-800 dark:text-gray-200"
+      :class="textInputClasses"
       placeholder="Email (only necessary if you prefer a response)"
     >
     <button
@@ -41,6 +41,7 @@ import feedbackMutation from '~/apollo/sendFeedback.gql'
 export default {
   data () {
     return {
+      textInputClasses: 'my-4 block w-full py-2 px-3 rounded-md bg-white dark:bg-gray-800 dark:bg-opacity-75 placeholder-gray-500 text-gray-800 dark:text-gray-200',
       whyUseIt: null,
       toBeImproved: null,
       email: null,
