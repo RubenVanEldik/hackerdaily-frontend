@@ -52,9 +52,9 @@ Coming soon.
 
 ## Authors
 
-* **Ruben van Eldik** - *Initial work* - [RubenVanEldik](https://github.com/RubenVanEldik)
+* **Ruben van Eldik** - [RubenVanEldik](https://github.com/RubenVanEldik)
 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
