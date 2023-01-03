@@ -25,6 +25,7 @@ Add a `.env` file with the environment variables.
 
 ```
 NODE_ENV=development
+FRONTEND_URL=localhost:3000
 BACKEND_URL=...
 SIMPLE_ANALYTICS_URL=...
 ```
