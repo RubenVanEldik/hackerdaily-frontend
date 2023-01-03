@@ -1,9 +1,9 @@
 import SimpleAnalytics from 'simple-analytics-vue'
 import Vue from 'vue'
 
-export default (context) => {
+export default ({ $config }) => {
   Vue.use(SimpleAnalytics, {
-    skip: context.$config.NODE_ENV !== 'production',
-    domain: context.$config.SIMPLE_ANALYTICS_URL
+    skip: !$config.SIMPLE_ANALYTICS_URL || $config.NODE_ENV !== 'production',
+    domain: $config.SIMPLE_ANALYTICS_URL
   })
 }
