@@ -6,3 +6,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[template.environment]
+  NODE_ENV = "Set to 'development' or 'production'"
+  FRONTEND_URL = "Required for the RSS feed"
+  BACKEND_URL = "Required for the API"
+  SIMPLE_ANALYTICS_URL = "Not required, but when set will use this domain for Simple Analytics"

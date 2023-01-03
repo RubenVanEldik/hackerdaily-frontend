@@ -35,9 +35,9 @@ npm run dev
 
 ## Deployment
 
-The HackerDaily frontend is currently deployed as a single page app on Netlify.
+The HackerDaily frontend is currently deployed as a single page app on Netlify. The simplest way to deploy your own version of HackerDaily is using the button below.
 
-To deploy to a new site simply add the environment variables and set `npm run build` as the build command.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/RubenVanEldik/hackerdaily-frontend)
 
 ## Built With
 
