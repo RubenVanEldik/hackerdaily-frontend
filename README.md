@@ -2,13 +2,16 @@
 
 This is the frontend repository for the HackerDaily site.
 
+
 ## Getting Started
 
 It's possible to get a local version up and running within a few minutes.
 
+
 ### Prerequisites
 
 Node.js, at least v10.13.
+
 
 ### Installing
 
@@ -39,6 +42,7 @@ The HackerDaily frontend is currently deployed as a single page app on Netlify. 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/RubenVanEldik/hackerdaily-frontend)
 
+
 ## Built With
 
 * [Nuxt.js](https://nuxtjs.org/) - Open source Vue framework
@@ -46,9 +50,6 @@ The HackerDaily frontend is currently deployed as a single page app on Netlify. 
 * [Tailwind CSS](https://tailwindcss.com/) - Used to easily and coherently style all pages
 * [Simple Analytics](https://referral.simpleanalytics.com/hackerdaily) - Privacy friendly analytics tool
 
-## Contributing
-
-Coming soon.
 
 ## Authors
 
