@@ -9,10 +9,12 @@
       v-if="showMessage"
       class="flex w-full mt-1 mb-5 px-5 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 bg-opacity-75 dark:bg-opacity-75"
     >
+      <!-- eslint-disable vue/no-v-html -->
       <div
         class="text-gray-700 dark:text-gray-300"
-        v-text="message"
+        v-html="message"
       />
+      <!-- eslint-enable vue/no-v-html -->
       <div class="-mt-4 -mr-6">
         <button
           class="block h-6 w-6 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 leading-none"
@@ -58,7 +60,7 @@ export default {
   },
   data () {
     return {
-      message: 'I will be migrating the backend and database from Heroku to Render on Tuesday. This could cause some temporary disruptions. My apologies in advance!'
+      message: 'I will be migrating the backend and database from Heroku to Render on <span class="line-through">Tuesday</span> Thursday. This could cause some temporary disruptions. My apologies in advance!'
     }
   },
   computed: {
