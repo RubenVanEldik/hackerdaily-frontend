@@ -46,11 +46,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
-
-dayjs.extend(relativeTime)
-
 export default {
   name: 'Comment',
   props: {
@@ -106,7 +101,6 @@ export default {
     }
   },
   methods: {
-    dayjs,
     toggleComment () {
       this.isCollapsed = !this.isCollapsed
 
