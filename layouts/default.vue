@@ -5,15 +5,15 @@
       <nuxt />
     </main>
     <footer class="flex justify-center mb-6 text-sm text-gray-500 italic">
-      <nuxt-link to="/contact" class="mx-3">
+      <nuxt-link to="/contact">
         Contact
       </nuxt-link>
-      <span v-text="'·'" />
-      <nuxt-link to="/thankyou" class="mx-3">
+      <span class="mx-3" v-text="'·'" />
+      <nuxt-link to="/thankyou">
         Support us
       </nuxt-link>
-      <span v-text="'·'" />
-      <nuxt-link to="/feed" class="mx-3">
+      <span class="mx-3" v-text="'·'" />
+      <nuxt-link to="/feed">
         RSS
       </nuxt-link>
     </footer>
