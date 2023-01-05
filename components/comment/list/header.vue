@@ -9,6 +9,10 @@
     <h2 v-text="storyTitle" />
     <div class="flex flex-col italic pl-2 sm:pl-3">
       <span class="flex items-center">
+        <icon-user class="h-5 w-5 mr-2 py-px" />
+        <span v-text="story.user_id" />
+      </span>
+      <span class="flex items-center">
         <icon-heart class="h-5 w-5 mr-2 py-px" />
         <span v-text="`${story.score} points`" />
       </span>
