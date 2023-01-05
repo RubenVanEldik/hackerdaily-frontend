@@ -1,7 +1,7 @@
 <template>
   <span
     v-if="url"
-    class="text-gray-600 dark:text-gray-500 text-sm"
+    class="text-gray-500 text-sm"
     v-text="`(${siteName})`"
   />
 </template>

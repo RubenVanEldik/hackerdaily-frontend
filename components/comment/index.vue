@@ -2,7 +2,7 @@
 <template>
   <div class="relative my-5">
     <div
-      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-700 dark:text-gray-100 hover:text-gray-400"
+      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-800 dark:text-gray-200 hover:text-gray-400"
       role="button"
       tabindex="0"
       aria-label="Minimize comment"
@@ -11,7 +11,7 @@
     />
     <div
       :id="`comment-${comment.id}`"
-      class="absolute -mt-8 leading-8 ml-6 text-gray-700 dark:text-gray-100 font-semibold"
+      class="absolute -mt-8 leading-8 ml-6 text-gray-800 dark:text-gray-200 font-semibold"
     >
       <span v-text="`${comment.user_id || '[deleted]'} · `" />
       <a

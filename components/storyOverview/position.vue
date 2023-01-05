@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-gray-700 dark:text-gray-400 w-5 mr-2 text-right leading-tight"
+    class="text-gray-600 dark:text-gray-400 w-5 mr-2 text-right leading-tight"
     v-text="`${position}.`"
   />
 </template>
