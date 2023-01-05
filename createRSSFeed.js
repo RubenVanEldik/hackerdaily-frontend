@@ -38,6 +38,9 @@ const getStoriesPerUniqueTimezone = async (timezones) => {
   }, [])
 
   return await Promise.all(uniqueDays.map(async ({ start, end }) => {
+    // Wait somewhere between 0 and 3 seconds before fetching the data to not overload the server
+    await new Promise(resolve => setTimeout(resolve, Math.random() * 3000))
+
     const query = require('./apollo/storiesWithinTimeframeQuery.gql')
     const variables = { startDate: start, endDate: end }
     return {
