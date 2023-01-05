@@ -1,10 +1,7 @@
 <template>
   <header class="w-full flex flex-row align-center justify-between sm:justify-start py-6 overflow-auto sm:overflow-visible text-red-700 dark:text-red-600">
     <div class="mr-2">
-      <icon
-        class="h-5"
-        icon="thumbtack"
-      />
+      <icon-thumbtack class="h-5 inline-block" />
     </div>
     <app-bar-item
       v-for="day in weekDays"
