@@ -11,18 +11,24 @@
     />
     <div
       :id="`comment-${comment.id}`"
-      class="absolute -mt-8 leading-8 ml-6 text-gray-800 dark:text-gray-200 font-semibold"
+      class="absolute flex items-center -mt-8 leading-8 ml-6 text-gray-800 dark:text-gray-200 font-semibold"
     >
-      <span v-text="`${comment.user_id || '[deleted]'} · `" />
-      <a
-        :href="`https://news.ycombinator.com/item?id=${comment.id}`"
-        rel="noopener noreferrer"
-        v-text="dayjs(comment.posted_at).fromNow()"
+      <span
+        class="ml-1"
+        v-text="comment.user_id || '[deleted]'"
       />
       <span
         v-if="isCollapsed"
-        v-text="`· [${comment.descendants + 1} more]`"
+        class="ml-2 text-gray-400 dark:text-gray-600"
+        v-text="`(${comment.descendants + 1} comments)`"
       />
+      <a
+        v-else
+        :href="`https://news.ycombinator.com/item?id=${comment.id}`"
+        class="ml-2 text-gray-400 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-500"
+      >
+        <icon-external-link class="h-4 w-4 pb-px" />
+      </a>
     </div>
     <div v-show="!isCollapsed">
       <div
