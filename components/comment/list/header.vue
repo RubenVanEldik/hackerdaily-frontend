@@ -7,7 +7,7 @@
       large
     />
     <h2 v-text="storyTitle" />
-    <div class="flex flex-col italic">
+    <div class="flex flex-col italic pl-2 sm:pl-3">
       <span>
         <icon
           class="mr-1 h-4 py-px"
