@@ -2,7 +2,7 @@
 <template>
   <div class="relative my-5">
     <div
-      class="sticky top-0 w-6 leading-8 text-center cursor-pointer font-semibold text-gray-800 dark:text-gray-200 hover:text-gray-400"
+      class="sticky top-0 w-6 rounded-md leading-8 text-center cursor-pointer font-semibold text-gray-800 dark:text-gray-200 hover:text-gray-400"
       role="button"
       tabindex="0"
       aria-label="Minimize comment"
@@ -11,21 +11,22 @@
     />
     <div
       :id="`comment-${comment.id}`"
-      class="absolute flex items-center -mt-8 leading-8 ml-6 text-gray-800 dark:text-gray-200 font-semibold"
+      class="absolute flex items-center -mt-8 leading-8 text-gray-800 dark:text-gray-200 font-semibold pointer-events-none"
     >
       <span
-        class="ml-1"
+        class="ml-5 pl-2 cursor-pointer pointer-events-auto"
+        @click="toggleComment"
         v-text="comment.user_id || '[deleted]'"
       />
       <span
         v-if="isCollapsed"
-        class="ml-2 text-gray-400 dark:text-gray-600"
+        class="ml-2 text-gray-400 dark:text-gray-600 pointer-events-auto"
         v-text="`(${comment.descendants + 1} comments)`"
       />
       <a
         v-else
         :href="`https://news.ycombinator.com/item?id=${comment.id}`"
-        class="ml-2 text-gray-400 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-500"
+        class="ml-2 text-gray-400 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-500 pointer-events-auto"
       >
         <icon-external-link class="h-4 w-4 pb-px" />
       </a>
