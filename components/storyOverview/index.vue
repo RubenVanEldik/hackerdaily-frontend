@@ -60,7 +60,7 @@ export default {
   },
   data () {
     return {
-      message: 'I will be migrating the backend and database from Heroku to Render on <span class="line-through">Tuesday</span> Thursday. This could cause some temporary disruptions. My apologies in advance!'
+      message: 'The migration is finally done, thank you for your patience over the past week! (the RSS feed is back up as well!)'
     }
   },
   computed: {
