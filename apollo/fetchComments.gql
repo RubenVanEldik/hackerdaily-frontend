@@ -6,7 +6,7 @@ query ($id: Int!) {
     url
     score
     user_id
-    comments(where: {user_id: {_is_null: false}}) {
+    comments {
       id
       text
       posted_at
