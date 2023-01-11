@@ -60,7 +60,7 @@ export default {
   },
   data () {
     return {
-      message: 'The migration is finally done, thank you for your patience over the past week! (the RSS feed is back up as well!)'
+      message: ''
     }
   },
   computed: {
