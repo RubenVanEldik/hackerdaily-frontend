@@ -25,8 +25,11 @@ export default {
     recursiveComments () {
       if (!this.story?.comments?.length) return null
 
-      // Sort all comments
-      const allComments = this.story.comments.slice().sort((a, b) => b.score - a.score)
+      // Sort all comments and filter out any flagged comments
+      const allComments = this.story.comments.slice()
+        .filter(comment => comment.text !== '[flagged]')
+        .sort((a, b) => b.score - a.score)
+
       // Find all non-top level comments
       const nestedComments = allComments.filter(comment => comment.parent_comment_id)
 
