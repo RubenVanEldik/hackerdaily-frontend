@@ -2,7 +2,8 @@
 <template>
   <div class="relative my-5">
     <div
-      class="sticky top-0 w-6 rounded-md leading-8 text-center cursor-pointer font-semibold text-gray-800 dark:text-gray-200 hover:text-gray-400"
+      :class="{'text-gray-800 dark:text-gray-200 hover:text-gray-500': !commenterAlsoPostedStory, 'text-red-700 dark:text-red-600 hover:text-red-800 dark:hover:text-red-700': commenterAlsoPostedStory}"
+      class="sticky top-0 w-6 rounded-md leading-8 text-center cursor-pointer font-semibold"
       role="button"
       tabindex="0"
       aria-label="Minimize comment"
@@ -14,6 +15,7 @@
       class="absolute flex items-center -mt-8 leading-8 text-gray-800 dark:text-gray-200 font-semibold pointer-events-none"
     >
       <span
+        :class="{'text-gray-800 dark:text-gray-200 hover:text-gray-500': !commenterAlsoPostedStory, 'text-red-700 dark:text-red-600 hover:text-red-800 dark:hover:text-red-700': commenterAlsoPostedStory}"
         class="ml-5 pl-2 cursor-pointer pointer-events-auto"
         @click="toggleComment"
         v-text="comment.user_id || '[deleted]'"
@@ -41,6 +43,7 @@
         :key="childComment.id"
         class="ml-4 sm:ml-5"
         :comment="childComment"
+        :story-user-id="storyUserId"
       />
     </div>
   </div>
@@ -53,6 +56,10 @@ export default {
     comment: {
       type: Object,
       required: true
+    },
+    storyUserId: {
+      type: String,
+      required: true
     }
   },
   data () {
@@ -61,6 +68,9 @@ export default {
     }
   },
   computed: {
+    commenterAlsoPostedStory () {
+      return this.storyUserId === this.comment.user_id
+    },
     parsedText () {
       const parts = this.comment.text?.split('<p>') ?? [] // Dunno why, but /30054739/comments suddenly gave an error without the nullish coalescing
       return parts

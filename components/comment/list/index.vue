@@ -8,7 +8,10 @@
       :key="comment.id"
     >
       <comment-divider />
-      <comment :comment="comment" />
+      <comment
+        :comment="comment"
+        :story-user-id="story.user_id"
+      />
     </div>
   </fallback>
 </template>
