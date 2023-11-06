@@ -60,7 +60,7 @@ export default {
   },
   data () {
     return {
-      message: ''
+      message: "Apologies for the recent downtime of HackerDaily! We're back online, and I'm actively working on site improvements. Your feedback is more than welcome; please share any suggestions <a href='/feedback' class='underline'>here</a>. Thanks for your patience and support!"
     }
   },
   computed: {
