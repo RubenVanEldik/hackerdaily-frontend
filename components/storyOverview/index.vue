@@ -60,7 +60,7 @@ export default {
   },
   data () {
     return {
-      message: 'We sincerely apologize for the recent downtime. The issue has been resolved, and HackerDaily should now be more stable than ever. Thank you!'
+      message: ''
     }
   },
   computed: {
