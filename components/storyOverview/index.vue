@@ -2,8 +2,8 @@
   <fallback
     :is-loading="$apollo.loading"
     :is-empty="!stories || !stories.length"
+    :empty-message="$apollo.error ? 'Something went wrong while fetching the stories.' : 'There are no stories saved for this day.'"±
     loading-message="Loading stories..."
-    empty-message="There are no stories saved for this day."
   >
     <div
       v-if="showMessage"
