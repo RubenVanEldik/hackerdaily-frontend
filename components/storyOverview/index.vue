@@ -2,9 +2,7 @@
   <fallback
     :is-loading="$apollo.loading"
     :is-empty="!stories || !stories.length"
-    :empty-message="$apollo.error ? 'Something went wrong while fetching the stories.' : 'There are no stories saved for this day.'"
-    loading-message="Loading stories..."
-  >
+    :empty-message="storiesErrorMessage || 'There are no stories saved for this day.'"  >
     <div
       v-if="showMessage"
       class="flex w-full mt-1 mb-5 px-5 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 bg-opacity-75 dark:bg-opacity-75"
@@ -55,12 +53,19 @@ export default {
           startDate: this.startDate,
           endDate: this.endDate
         }
+      },
+      result () {
+        this.storiesError = null
+      },
+      error (error) {
+        this.storiesError = error.message
       }
     }
   },
   data () {
     return {
-      message: ''
+      message: '',
+      storiesError: null,
     }
   },
   computed: {
