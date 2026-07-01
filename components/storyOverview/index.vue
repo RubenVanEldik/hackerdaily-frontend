@@ -64,7 +64,7 @@ export default {
   },
   data () {
     return {
-      message: '',
+      message: 'My apologies for the issues over the past few days! I switched to a new CDN, but the firewall was too strict. Everything should be stable again. If you still experience any issues, please let me know at contact@hackerdaily.io!',
       storiesError: null,
     }
   },
